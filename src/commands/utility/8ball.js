@@ -21,10 +21,10 @@ module.exports = {
 
     let question = interaction.options.getString("question");
     let newMessage = "";
-    if (question) newMessage = `"${question}"\n`;
+    if (question) newMessage = `Your question: "${question}"\n`;
     
     let randomNumber = Math.floor(Math.random() * 8);
-    newMessage += `*${balls[randomNumber]}*`;
+    newMessage += `> *${balls[randomNumber]}*`;
 
     await interaction.editReply({ content: newMessage });
   },

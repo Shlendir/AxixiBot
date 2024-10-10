@@ -3,7 +3,10 @@ const { token } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
-const client = new Client({ intents: GatewayIntentBits.Guilds });
+const client = new Client({
+    presence: { activities: [{ name: "being gay", type: 5 }], status: "online" },
+    intents: GatewayIntentBits.Guilds
+});
 client.commands = new Collection();
 client.commandArray = [];
 
