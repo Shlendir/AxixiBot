@@ -34,17 +34,14 @@ module.exports = {
     if (unit1 === unit2) newMessage = `${first_temp}°${unit1}`;
     else {
       if (unit1 === "C") {
-        // c to f, then c to k
-        if (unit2 === "F") last_temp = first_temp * (9 / 5) + 32;
-        else if (unit2 === "K") last_temp = first_temp + 273.15;
+        if (unit2 === "F") last_temp = first_temp * (9 / 5) + 32; // c to f
+        else if (unit2 === "K") last_temp = first_temp + 273.15; // c to k
       } else if (unit1 === "F") {
-        // f to c, then f to k
-        if (unit2 === "C") last_temp = (first_temp - 32) / (9 / 5);
-        else if (unit2 === "K") last_temp = (first_temp + 459.67) * (5 / 9);
+        if (unit2 === "C") last_temp = (first_temp - 32) / (9 / 5); // f to c
+        else if (unit2 === "K") last_temp = (first_temp + 459.67) * (5 / 9); // f to k
       } else if (unit1 === "K") {
-        // k to c, then k to f
-        if (unit2 === "C") last_temp = first_temp - 273.15;
-        else if (unit2 === "F") last_temp = first_temp * (9 / 5) - 459.67;
+        if (unit2 === "C") last_temp = first_temp - 273.15; // k to c
+        else if (unit2 === "F") last_temp = first_temp * (9 / 5) - 459.67; // k to f
       }
 
       const rounded = last_temp.toFixed(2); //rounds it 
