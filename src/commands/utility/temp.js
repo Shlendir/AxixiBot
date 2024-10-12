@@ -24,10 +24,10 @@ module.exports = {
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
 
-    const unit1 = interaction.options.getString("unit");
-    const first_temp = interaction.options.getNumber("temp");
-    const unit2 = interaction.options.getString("to");
-    let last_temp = "";
+    const unit1 = interaction.options.getString("unit"); //celcius etc
+    const first_temp = interaction.options.getNumber("temp"); //the number they gave
+    const unit2 = interaction.options.getString("to"); //whatever the fuck they want to convert to
+    let last_temp = 0; //what it results to
     let newMessage = "";
 
     // if ppl chose the same damn units
@@ -46,8 +46,10 @@ module.exports = {
         if (unit2 === "C") last_temp = first_temp - 273.15;
         else if (unit2 === "F") last_temp = first_temp * (9 / 5) - 459.67;
       }
-      last_temp = Math.floor(last_temp);
-      newMessage = `${first_temp}°${unit1} equals to ${last_temp}°${unit2}`;
+
+      const rounded = last_temp.toFixed(2); //rounds it 
+
+      newMessage = `${first_temp}°${unit1} equals to ${rounded}°${unit2}`; //result message
     }
     await interaction.editReply({ content: newMessage });
   },
