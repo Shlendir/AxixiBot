@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -13,5 +13,9 @@ module.exports = {
         await interaction.editReply({
             content: newMessage
         });
+
+        //const embed = new EmbedBuilder()
+            //.setTitle('Pong.')
+            //.setColor()
     }
 }
