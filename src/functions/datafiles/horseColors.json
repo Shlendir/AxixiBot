@@ -1,0 +1,762 @@
+[
+  {
+    "baseColor": ["Black", "Black"],
+    "baseResult": ["Black", "Black", "Black", "Chestnut"]
+  },
+  {
+    "baseColor": ["Bay", "Black"],
+    "baseResult": ["Bay", "Bay", "Brown", "Black"]
+  },
+  {
+    "baseColor": ["Bay", "Bay"],
+    "baseResult": ["Bay", "Bay", "Brown", "Chestnut"]
+  },
+  {
+    "baseColor": ["Seal Brown", "Black"],
+    "baseResult": ["Bay", "Brown", "Black", "Seal Brown"]
+  },
+  {
+    "baseColor": ["Seal Brown", "Bay"],
+    "baseResult": ["Bay", "Bay", "Black", "Brown"]
+  },
+  {
+    "baseColor": ["Seal Brown", "Seal Brown"],
+    "baseResult": ["Seal Brown", "Bay", "Black", "Brown"]
+  },
+  {
+    "baseColor": ["Smoky Black", "Black"],
+    "baseResult": ["Bay", "Buckskin", "Smoky Black", "Black"]
+  },
+  {
+    "baseColor": ["Smoky Black", "Bay"],
+    "baseResult": ["Bay", "Buckskin", "Buckskin", "Black"]
+  },
+  {
+    "baseColor": ["Smoky Black", "Seal Brown"],
+    "baseResult": ["Seal Brown", "Brown", "Smoky Black", "Buckskin"]
+  },
+  {
+    "baseColor": ["Smoky Black", "Smoky Black"],
+    "baseResult": ["Perlino", "Smoky Black", "Smoky Black", "Black"]
+  },
+  {
+    "baseColor": ["Chestnut", "Black"],
+    "baseResult": ["Bay", "Seal Brown", "Black", "Chestnut"]
+  },
+  {
+    "baseColor": ["Chestnut", "Bay"],
+    "baseResult": ["Bay", "Bay", "Black", "Chestnut"]
+  },
+  {
+    "baseColor": ["Chestnut", "Seal Brown"],
+    "baseResult": ["Brown", "Bay", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Chestnut", "Smoky Black"],
+    "baseResult": ["Brown", "Bay", "Chestnut", "Palomino"]
+  },
+  {
+    "baseColor": ["Chestnut", "Chestnut"],
+    "baseResult": ["Chestnut", "Chestnut", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Liver", "Black"],
+    "baseResult": ["Bay", "Liver", "Black", "Chestnut"]
+  },
+  {
+    "baseColor": ["Liver", "Bay"],
+    "baseResult": ["Bay", "Bay", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Liver", "Seal Brown"],
+    "baseResult": ["Bay", "Brown", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Liver", "Smoky Black"],
+    "baseResult": ["Buckskin", "Palomino", "Chestnut", "Bay"]
+  },
+  {
+    "baseColor": ["Liver", "Chestnut"],
+    "baseResult": ["Chestnut", "Chestnut", "Liver", "Liver"]
+  },
+  {
+    "baseColor": ["Liver", "Liver"],
+    "baseResult": ["Liver", "Liver", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Sorrel", "Black"],
+    "baseResult": ["Brown", "Bay", "Black", "Sorrel"]
+  },
+  {
+    "baseColor": ["Sorrel", "Bay"],
+    "baseResult": ["Bay", "Brown", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Sorrel", "Seal Brown"],
+    "baseResult": ["Brown", "Brown", "Chestnut", "Sorrel"]
+  },
+  {
+    "baseColor": ["Sorrel", "Smoky Black"],
+    "baseResult": ["Buckskin", "Palomino", "Chestnut", "Bay"]
+  },
+  {
+    "baseColor": ["Sorrel", "Chestnut"],
+    "baseResult": ["Sorrel", "Sorrel", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Sorrel", "Liver"],
+    "baseResult": ["Liver", "Chestnut", "Chestnut", "Sorrel"]
+  },
+  {
+    "baseColor": ["Sorrel", "Sorrel"],
+    "baseResult": ["Sorrel", "Chestnut", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Brown", "Black"],
+    "baseResult": ["Brown", "Brown", "Bay", "Seal Brown"]
+  },
+  {
+    "baseColor": ["Brown", "Bay"],
+    "baseResult": ["Bay", "Brown", "Brown", "Chestnut"]
+  },
+  {
+    "baseColor": ["Brown", "Seal Brown"],
+    "baseResult": ["Seal Brown", "Brown", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Brown", "Smoky Black"],
+    "baseResult": ["Smoky Black", "Buckskin", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Brown", "Chestnut"],
+    "baseResult": ["Brown", "Brown", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Brown", "Liver"],
+    "baseResult": ["Brown", "Bay", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Brown", "Sorrel"],
+    "baseResult": ["Brown", "Bay", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Brown", "Brown"],
+    "baseResult": ["Brown", "Brown", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Buckskin", "Black"],
+    "baseResult": ["Buckskin", "Buckskin", "Bay", "Smoky Black"]
+  },
+  {
+    "baseColor": ["Buckskin", "Bay"],
+    "baseResult": ["Buckskin", "Buckskin", "Bay", "Brown"]
+  },
+  {
+    "baseColor": ["Buckskin", "Seal Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Seal Brown", "Brown"]
+  },
+  {
+    "baseColor": ["Buckskin", "Smoky Black"],
+    "baseResult": ["Perlino", "Smoky Black", "Seal Brown", "Brown"]
+  },
+  {
+    "baseColor": ["Buckskin", "Chestnut"],
+    "baseResult": ["Bay", "Buckskin", "Chestnut", "Palomino"]
+  },
+  {
+    "baseColor": ["Buckskin", "Liver"],
+    "baseResult": ["Buckskin", "Palomino", "Bay", "Liver"]
+  },
+  {
+    "baseColor": ["Buckskin", "Sorrel"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Buckskin", "Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Buckskin", "Buckskin"],
+    "baseResult": ["Buckskin", "Buckskin", "Bay", "Perlino"]
+  },
+  {
+    "baseColor": ["Palomino", "Black"],
+    "baseResult": ["Smoky Black", "Buckskin", "Bay", "Palomino"]
+  },
+  {
+    "baseColor": ["Palomino", "Bay"],
+    "baseResult": ["Buckskin", "Bay", "Palomino", "Chestnut"]
+  },
+  {
+    "baseColor": ["Palomino", "Seal Brown"],
+    "baseResult": ["Bay", "Brown", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Palomino", "Smoky Black"],
+    "baseResult": ["Buckskin", "Palomino", "Chestnut", "Bay"]
+  },
+  {
+    "baseColor": ["Palomino", "Chestnut"],
+    "baseResult": ["Palomino", "Palomino", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Palomino", "Liver"],
+    "baseResult": ["Palomino", "Palomino", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Palomino", "Sorrel"],
+    "baseResult": ["Palomino", "Palomino", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Palomino", "Brown"],
+    "baseResult": ["Buckskin", "Bay", "Palomino", "Chestnut"]
+  },
+  {
+    "baseColor": ["Palomino", "Buckskin"],
+    "baseResult": ["Buckskin", "Palomino", "Bay", "Cremello"]
+  },
+  {
+    "baseColor": ["Palomino", "Palomino"],
+    "baseResult": ["Palomino", "Palomino", "Chestnut", "Cremello"]
+  },
+  {
+    "baseColor": ["Cremello", "Black"],
+    "baseResult": ["Smoky Black", "Smoky Black", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Bay"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Seal Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Smoky Black"],
+    "baseResult": ["Perlino", "Perlino", "Cremello", "Buckskin"]
+  },
+  {
+    "baseColor": ["Cremello", "Chestnut"],
+    "baseResult": ["Palomino", "Palomino", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Liver"],
+    "baseResult": ["Palomino", "Palomino", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Sorrel"],
+    "baseResult": ["Palomino", "Palomino", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Cremello", "Buckskin"],
+    "baseResult": ["Buckskin", "Palomino", "Cremello", "Perlino"]
+  },
+  {
+    "baseColor": ["Cremello", "Palomino"],
+    "baseResult": ["Palomino", "Palomino", "Cremello", "Cremello"]
+  },
+  {
+    "baseColor": ["Cremello", "Cremello"],
+    "baseResult": ["Cremello", "Cremello", "Cremello", "Cremello"]
+  },
+  {
+    "baseColor": ["Perlino", "Black"],
+    "baseResult": ["Smoky Black", "Buckskin", "Buckskin", "Buckskin"]
+  },
+  {
+    "baseColor": ["Perlino", "Bay"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Perlino", "Seal Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Buckskin"]
+  },
+  {
+    "baseColor": ["Perlino", "Smoky Black"],
+    "baseResult": ["Perlino", "Perlino", "Buckskin", "Buckskin"]
+  },
+  {
+    "baseColor": ["Perlino", "Chestnut"],
+    "baseResult": ["Palomino", "Palomino", "Buckskin", "Buckskin"]
+  },
+  {
+    "baseColor": ["Perlino", "Liver"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Perlino", "Sorrel"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Perlino", "Brown"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Buckskin"]
+  },
+  {
+    "baseColor": ["Perlino", "Buckskin"],
+    "baseResult": ["Buckskin", "Buckskin", "Cremello", "Perlino"]
+  },
+  {
+    "baseColor": ["Perlino", "Palomino"],
+    "baseResult": ["Buckskin", "Palomino", "Perlino", "Cremello"]
+  },
+  {
+    "baseColor": ["Perlino", "Cremello"],
+    "baseResult": ["Cremello", "Cremello", "Perlino", "Perlino"]
+  },
+  {
+    "baseColor": ["Perlino", "Perlino"],
+    "baseResult": ["Perlino", "Perlino", "Perlino", "Cremello"]
+  },
+  {
+    "baseColor": ["Dun", "Black"],
+    "baseResult": ["Dun", "Dun", "Bay", "Black"]
+  },
+  {
+    "baseColor": ["Dun", "Bay"],
+    "baseResult": ["Dun", "Dun", "Bay", "Brown"]
+  },
+  {
+    "baseColor": ["Dun", "Seal Brown"],
+    "baseResult": ["Dun", "Dun", "Brown", "Seal Brown"]
+  },
+  {
+    "baseColor": ["Dun", "Smoky Black"],
+    "baseResult": ["Buckskin", "Dun", "Dun", "Black"]
+  },
+  {
+    "baseColor": ["Dun", "Chestnut"],
+    "baseResult": ["Dun", "Dun", "Red Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Dun", "Liver"],
+    "baseResult": ["Red Dun", "Red Dun", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Dun", "Sorrel"],
+    "baseResult": ["Red Dun", "Red Dun", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Dun", "Brown"],
+    "baseResult": ["Dun", "Dun", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Dun", "Buckskin"],
+    "baseResult": ["Bay", "Palomino", "Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Dun", "Palomino"],
+    "baseResult": ["Buckskin", "Palomino", "Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Dun", "Cremello"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Dun", "Perlino"],
+    "baseResult": ["Buckskin", "Buckskin", "Dun", "Palomino"]
+  },
+  {
+    "baseColor": ["Dun", "Dun"],
+    "baseResult": ["Dun", "Dun", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Red Dun", "Black"],
+    "baseResult": ["Dun", "Dun", "Bay", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Bay"],
+    "baseResult": ["Dun", "Red Dun", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Red Dun", "Seal Brown"],
+    "baseResult": ["Dun", "Dun", "Brown", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Smoky Black"],
+    "baseResult": ["Buckskin", "Palomino", "Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Red Dun", "Chestnut"],
+    "baseResult": ["Red Dun", "Red Dun", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Red Dun", "Liver"],
+    "baseResult": ["Chestnut", "Liver", "Red Dun", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Sorrel"],
+    "baseResult": ["Chestnut", "Sorrel", "Red Dun", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Brown"],
+    "baseResult": ["Brown", "Dun", "Chestnut", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Buckskin"],
+    "baseResult": ["Bay", "Buckskin", "Palomino", "Red Dun"]
+  },
+  {
+    "baseColor": ["Red Dun", "Palomino"],
+    "baseResult": ["Chestnut", "Chestnut", "Red Dun", "Palomino"]
+  },
+  {
+    "baseColor": ["Red Dun", "Cremello"],
+    "baseResult": ["Chestnut", "Red Dun", "Red Dun", "Palomino"]
+  },
+  {
+    "baseColor": ["Red Dun", "Perlino"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Red Dun", "Dun"],
+    "baseResult": ["Dun", "Red Dun", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Red Dun", "Red Dun"],
+    "baseResult": ["Red Dun", "Red Dun", "Red Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Black"],
+    "baseResult": ["Champagne", "Bay", "Black", "Brown"]
+  },
+  {
+    "baseColor": ["Champagne", "Bay"],
+    "baseResult": ["Champagne", "Champagne", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Seal Brown"],
+    "baseResult": ["Champagne", "Champagne", "Bay", "Brown"]
+  },
+  {
+    "baseColor": ["Champagne", "Smoky Black"],
+    "baseResult": ["Champagne", "Ivory Champagne", "Bay", "Buckskin"]
+  },
+  {
+    "baseColor": ["Champagne", "Chestnut"],
+    "baseResult": ["Champagne", "Champagne", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Liver"],
+    "baseResult": ["Champagne", "Champagne", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Sorrel"],
+    "baseResult": ["Champagne", "Ivory Champagne", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Brown"],
+    "baseResult": ["Champagne", "Champagne", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Champagne", "Buckskin"],
+    "baseResult": ["Ivory Champagne", "Buckskin", "Palomino", "Bay"]
+  },
+  {
+    "baseColor": ["Champagne", "Palomino"],
+    "baseResult": ["Palomino", "Ivory Champagne", "Champagne", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Cremello"],
+    "baseResult": ["Ivory Champagne", "Ivory Champagne", "Ivory Champagne", "Ivory Champagne"]
+  },
+  {
+    "baseColor": ["Champagne", "Perlino"],
+    "baseResult": ["Ivory Champagne", "Ivory Champagne", "Palomino", "Buckskin"]
+  },
+  {
+    "baseColor": ["Champagne", "Dun"],
+    "baseResult": ["Champagne", "Champagne", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Red Dun"],
+    "baseResult": ["Red Dun", "Champagne", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Champagne", "Champagne"],
+    "baseResult": ["Champagne", "Champagne", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Black"],
+    "baseResult": ["Black", "Silver Dapple", "Bay", "Silver Dapple"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Bay"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Black"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Seal Brown"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Silver Dapple", "Bay"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Smoky Black"],
+    "baseResult": ["Buckskin", "Black", "Bay", "Silver Dapple"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Chestnut"],
+    "baseResult": ["Silver Dapple", "Bay", "Black", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Liver"],
+    "baseResult": ["Silver Dapple", "Bay", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Sorrel"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Brown"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Brown", "Bay"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Buckskin"],
+    "baseResult": ["Silver Dapple", "Buckskin", "Bay", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Palomino"],
+    "baseResult": ["Palomino", "Chestnut", "Bay", "Silver Dapple"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Cremello"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Perlino"],
+    "baseResult": ["Buckskin", "Buckskin", "Buckskin", "Palomino"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Dun"],
+    "baseResult": ["Dun", "Dun", "Silver Dapple", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Red Dun"],
+    "baseResult": ["Silver Dapple", "Dun", "Red Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Champagne"],
+    "baseResult": ["Champagne", "Bay", "Chestnut", "Black"]
+  },
+  {
+    "baseColor": ["Silver Dapple", "Silver Dapple"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Black"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Black"],
+    "baseResult": ["Black", "Champagne", "Chestnut", "Bay"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Bay"],
+    "baseResult": ["Bay", "Bay", "Champagne", "Champagne"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Seal Brown"],
+    "baseResult": ["Bay", "Champagne", "Brown", "Seal Brown"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Smoky Black"],
+    "baseResult": ["Champagne", "Champagne", "Buckskin", "Black"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Chestnut"],
+    "baseResult": ["Chestnut", "Chestnut", "Champagne", "Champagne"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Liver"],
+    "baseResult": ["Ivory Champagne", "Champagne", "Liver", "Chestnut"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Sorrel"],
+    "baseResult": ["Ivory Champagne", "Champagne", "Sorrel", "Chestnut"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Brown"],
+    "baseResult": ["Brown", "Buckskin", "Champagne", "Palomino"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Buckskin"],
+    "baseResult": ["Buckskin", "Champagne", "Chestnut", "Palomino"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Palomino"],
+    "baseResult": ["Palomino", "Champagne", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Cremello"],
+    "baseResult": ["Cremello", "Cremello", "Ivory Champagne", "Palomino"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Perlino"],
+    "baseResult": ["Perlino", "Perlino", "Cremello", "Cremello"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Dun"],
+    "baseResult": ["Dun", "Dun", "Champagne", "Champagne"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Red Dun"],
+    "baseResult": ["Champagne", "Champagne", "Red Dun", "Chestnut"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Champagne"],
+    "baseResult": ["Champagne", "Champagne", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Silver Dapple"],
+    "baseResult": ["Bay", "Silver Dapple", "Chestnut", "Champagne"]
+  },
+  {
+    "baseColor": ["Ivory Champagne", "Ivory Champagne"],
+    "baseResult": ["Ivory Champagne", "Ivory Champagne", "Champagne", "Champagne"]
+  },
+  {
+    "baseColor": ["Mushroom", "Black"],
+    "baseResult": ["Black", "Bay", "Brown", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Bay"],
+    "baseResult": ["Bay", "Bay", "Brown", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Seal Brown"],
+    "baseResult": ["Bay", "Brown", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Smoky Black"],
+    "baseResult": ["Buckskin", "Buckskin", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Chestnut"],
+    "baseResult": ["Chestnut", "Chestnut", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Liver"],
+    "baseResult": ["Liver", "Liver", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Sorrel"],
+    "baseResult": ["Sorrel", "Sorrel", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Brown"],
+    "baseResult": ["Brown", "Bay", "Palomino", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Buckskin"],
+    "baseResult": ["Buckskin", "Bay", "Palomino", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Palomino"],
+    "baseResult": ["Buckskin", "Palomino", "Bay", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Cremello"],
+    "baseResult": ["Palomino", "Palomino", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Mushroom", "Perlino"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Dun"],
+    "baseResult": ["Dun", "Dun", "Bay", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Red Dun"],
+    "baseResult": ["Red Dun", "Red Dun", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Champagne"],
+    "baseResult": ["Champagne", "Bay", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Silver Dapple"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Ivory Champagne"],
+    "baseResult": ["Ivory Champagne", "Champagne", "Chestnut", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Mushroom", "Mushroom"],
+    "baseResult": ["Mushrooms", "Mushrooms", "Mushrooms", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Pearl", "Black"],
+    "baseResult": ["Black", "Bay", "Brown", "Mushrooms"]
+  },
+  {
+    "baseColor": ["Pearl", "Bay"],
+    "baseResult": ["Bay", "Bay", "Brown", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Seal Brown"],
+    "baseResult": ["Bay", "Brown", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Smoky Black"],
+    "baseResult": ["Black", "Buckskin", "Bay", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Chestnut"],
+    "baseResult": ["Chestnut", "Chestnut", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Liver"],
+    "baseResult": ["Liver", "Liver", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Sorrel"],
+    "baseResult": ["Sorrel", "Sorrel", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Brown"],
+    "baseResult": ["Brown", "Bay", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Buckskin"],
+    "baseResult": ["Buckskin", "Bay", "Palomino", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Palomino"],
+    "baseResult": ["Palomino", "Pearl", "Chestnut", "Chestnut"]
+  },
+  {
+    "baseColor": ["Pearl", "Cremello"],
+    "baseResult": ["Palomino", "Palomino", "Palomino", "Palomino"]
+  },
+  {
+    "baseColor": ["Pearl", "Perlino"],
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Dun"],
+    "baseResult": ["Dun", "Dun", "Bay", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Red Dun"],
+    "baseResult": ["Red Dun", "Red Dun", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Champagne"],
+    "baseResult": ["Champagne", "Chestnut", "Bay", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Silver Dapple"],
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Ivory Champagne"],
+    "baseResult": ["Ivory Champagne", "Champagne", "Chestnut", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Mushroom"],
+    "baseResult": ["Bay", "Chestnut", "Mushrooms", "Pearl"]
+  },
+  {
+    "baseColor": ["Pearl", "Pearl"],
+    "baseResult": ["Pearl", "Pearl", "Pearl", "Pearl"]
+  }
+]
