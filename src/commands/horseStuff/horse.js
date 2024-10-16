@@ -4,15 +4,15 @@ const baseCombos = require("../../functions/datafiles/horseColors.json");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("horse")
-    .setDescription("ä")
+    .setDescription("Find foal information: base colors, crosses or height.")
     .addSubcommand((subcommand) =>
       subcommand
         .setName("color")
-        .setDescription("ö")
+        .setDescription("Base color results.")
         .addStringOption((option) =>
           option
             .setName("firstcolor")
-            .setDescription("õõ")
+            .setDescription("First parent base color.")
             .setRequired(true)
             .addChoices(
               { name: "Black", value: "Black" },
@@ -39,7 +39,7 @@ module.exports = {
         .addStringOption((option) =>
           option
             .setName("secondcolor")
-            .setDescription("ü")
+            .setDescription("Second parent base color.")
             .setRequired(true)
             .addChoices(
               { name: "Black", value: "Black" },
