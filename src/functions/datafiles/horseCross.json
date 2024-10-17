@@ -2,5 +2,102 @@
     {
         "parents": ["Kiger Mustang", "Nokota"],
         "foal": ["50% Nokota", "50% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Kiger Mustang", "Turkoman"],
+        "foal": ["50% Turkoman", "40% Kiger Mustang", "10% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Orlov Trotter"],
+        "foal": ["20% Akhal Teke", "50% Orlov Trotter", "30% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Andalusian"],
+        "foal": ["40% Akhal Teke", "40% Andalusian", "20% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "American Saddlebred"],
+        "foal": ["20% Akhal Teke", "20% American Saddlebred", "60% Grade Saddle Horse"]
+    },
+
+    {
+        "parents": ["Akhal Teke", "American Mustang"],
+        "foal": ["30% Akhal Teke", "50% American Mustang", "20% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Alter Real"],
+        "foal": ["10% Akhal Teke", " 10% Alter Real", "80% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Trakehner"],
+        "foal": ["20% Akhal Teke", "20% Turkoman", "30% Trakehner", "20% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Kathiawari"],
+        "foal": ["70% Kathiawari", "30% Akhal Teke"]
+    },
+    {
+        "parents": ["Akhal Teke", "Turkoman"],
+        "foal": ["50% Turkoman", "40% Akhal Teke", "10% Grade Saddle Horse"]
+    },
+    {
+        "parents": ["Akhal Teke", "Nez Perce Horse"],
+        "foal": ["100% Nez Perce Horse"]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
+    },
+    {
+        "parents": ["1", "1"],
+        "foal": ["", "", ""]
     }
 ]

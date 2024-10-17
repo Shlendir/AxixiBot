@@ -613,43 +613,43 @@
   },
   {
     "baseColor": ["Mushroom", "Black"],
-    "baseResult": ["Black", "Bay", "Brown", "Mushrooms"]
+    "baseResult": ["Black", "Bay", "Brown", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Bay"],
-    "baseResult": ["Bay", "Bay", "Brown", "Mushrooms"]
+    "baseResult": ["Bay", "Bay", "Brown", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Seal Brown"],
-    "baseResult": ["Bay", "Brown", "Chestnut", "Mushrooms"]
+    "baseResult": ["Bay", "Brown", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Smoky Black"],
-    "baseResult": ["Buckskin", "Buckskin", "Chestnut", "Mushrooms"]
+    "baseResult": ["Buckskin", "Buckskin", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Chestnut"],
-    "baseResult": ["Chestnut", "Chestnut", "Chestnut", "Mushrooms"]
+    "baseResult": ["Chestnut", "Chestnut", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Liver"],
-    "baseResult": ["Liver", "Liver", "Chestnut", "Mushrooms"]
+    "baseResult": ["Liver", "Liver", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Sorrel"],
-    "baseResult": ["Sorrel", "Sorrel", "Chestnut", "Mushrooms"]
+    "baseResult": ["Sorrel", "Sorrel", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Brown"],
-    "baseResult": ["Brown", "Bay", "Palomino", "Mushrooms"]
+    "baseResult": ["Brown", "Bay", "Palomino", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Buckskin"],
-    "baseResult": ["Buckskin", "Bay", "Palomino", "Mushrooms"]
+    "baseResult": ["Buckskin", "Bay", "Palomino", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Palomino"],
-    "baseResult": ["Buckskin", "Palomino", "Bay", "Mushrooms"]
+    "baseResult": ["Buckskin", "Palomino", "Bay", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Cremello"],
@@ -657,35 +657,35 @@
   },
   {
     "baseColor": ["Mushroom", "Perlino"],
-    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Mushrooms"]
+    "baseResult": ["Buckskin", "Buckskin", "Palomino", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Dun"],
-    "baseResult": ["Dun", "Dun", "Bay", "Mushrooms"]
+    "baseResult": ["Dun", "Dun", "Bay", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Red Dun"],
-    "baseResult": ["Red Dun", "Red Dun", "Chestnut", "Mushrooms"]
+    "baseResult": ["Red Dun", "Red Dun", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Champagne"],
-    "baseResult": ["Champagne", "Bay", "Chestnut", "Mushrooms"]
+    "baseResult": ["Champagne", "Bay", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Silver Dapple"],
-    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Mushrooms"]
+    "baseResult": ["Silver Dapple", "Silver Dapple", "Bay", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Ivory Champagne"],
-    "baseResult": ["Ivory Champagne", "Champagne", "Chestnut", "Mushrooms"]
+    "baseResult": ["Ivory Champagne", "Champagne", "Chestnut", "Mushroom"]
   },
   {
     "baseColor": ["Mushroom", "Mushroom"],
-    "baseResult": ["Mushrooms", "Mushrooms", "Mushrooms", "Mushrooms"]
+    "baseResult": ["Mushroom", "Mushroom", "Mushroom", "Mushroom"]
   },
   {
     "baseColor": ["Pearl", "Black"],
-    "baseResult": ["Black", "Bay", "Brown", "Mushrooms"]
+    "baseResult": ["Black", "Bay", "Brown", "Mushroom"]
   },
   {
     "baseColor": ["Pearl", "Bay"],
@@ -753,7 +753,7 @@
   },
   {
     "baseColor": ["Pearl", "Mushroom"],
-    "baseResult": ["Bay", "Chestnut", "Mushrooms", "Pearl"]
+    "baseResult": ["Bay", "Chestnut", "Mushroom", "Pearl"]
   },
   {
     "baseColor": ["Pearl", "Pearl"],
