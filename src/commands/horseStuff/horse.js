@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require("discord.js");
 const baseCombos = require("../../functions/datafiles/horseColors.json");
+const breeds = require("../../functions/datafiles/breeds.json")
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -63,7 +64,35 @@ module.exports = {
               { name: "Pearl", value: "Pearl" }
             )
         )
+    )
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("breed")
+        .setDescription("ä")
+        .addStringOption((option) =>
+          option
+            .setName("breed1")
+            .setDescription("ö")
+            .setRequired(true)
+            .setAutocomplete(true)
+        )
+        .addStringOption((option) =>
+          option
+            .setName("breed2")
+            .setDescription("ü")
+            .setRequired(true)
+            .setAutocomplete(true)
+        )
     ),
+    async autocomplete(interaction, client) {
+      const focusedValue = interaction.options.getFocused();
+      var choices = breeds;
+      var filtered = choices.filter((choice) => choice.name.toLowerCase().includes(focusedValue.toLowerCase()));
+      const max = 5;
+      filtered = filtered.length > max ? filtered.slice(0, max) : filtered;
+      await interaction.respond(filtered);
+    },
+
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
 

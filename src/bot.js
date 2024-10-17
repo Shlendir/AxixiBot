@@ -2,10 +2,11 @@ require("dotenv").config();
 const { token } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
+const { Guilds, GuildMembers, GuildPresences } = GatewayIntentBits
 
 const client = new Client({
     presence: { activities: [{ name: "being gay", type: 5 }], status: "online" },
-    intents: GatewayIntentBits.Guilds
+    intents: [Guilds, GuildMembers, GuildPresences]
 });
 client.commands = new Collection();
 client.commandArray = [];
