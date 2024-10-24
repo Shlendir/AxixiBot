@@ -19,7 +19,6 @@
     "parents": ["Akhal Teke", "American Saddlebred"],
     "foal": ["20% Akhal Teke", "20% American Saddlebred", "60% Grade Saddle Horse"]
   },
-
   {
     "parents": ["Akhal Teke", "American Mustang"],
     "foal": ["30% Akhal Teke", "50% American Mustang", "20% Grade Saddle Horse"]
@@ -1061,187 +1060,223 @@
     "foal": ["35% Groningen", "30% Oldenburg", "35% Dutch Warmblood"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Argentine Polo Pony", "Andalusian"],
+    "foal": ["100% Argentine Polo Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Argentine Polo Pony", "Thoroughbred"],
+    "foal": ["100% Argentine Polo Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Argentine Polo Pony", "Spanish Barb"],
+    "foal": ["100% Argentine Polo Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Argentine Polo Pony", "Criollo"],
+    "foal": ["100% Argentine Polo Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Thoroughbred"],
+    "foal": ["100% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Gelderland"],
+    "foal": ["50% Gelderland", "50% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Trakehner"],
+    "foal": ["100% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Selle Francais"],
+    "foal": ["50% Selle Francais", "50% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Danish Warmblood"],
+    "foal": ["50% Danish Warmblood", "50% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Holsteiner"],
+    "foal": ["50% Holsteiner", "50% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Oldenburg"],
+    "foal": ["90% Oldenburg", "10% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Dutch Warmblood"],
+    "foal": ["50% Westphalian", "50% Dutch Warmblood"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Hanoverian"],
+    "foal": ["50% Westphalian", "50% Hanoverian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Westphalian", "Groningen"],
+    "foal": ["50% Groningen", "50% Westphalian"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Welsh Mountain Pony", "Arabian"],
+    "foal": ["30% Welsh Mountain Pony", "35% Grade Saddle Horse", "35% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Welsh Mountain Pony", "Australian Stock Horse"],
+    "foal": ["50% Australian Stock Horse", "50% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Welsh Mountain Pony", "Newfoundland Pony"],
+    "foal": ["100% Newfoundland Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Welsh Mountain Pony", "Welsh Cob"],
+    "foal": ["75% Welsh Cob", "25% Welsh Mountain Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Welsh Mountain Pony", "Pony of the Americas"],
+    "foal": ["100% Pony of the Americas"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Russian Heavy Draft", "Orlov Trotter"],
+    "foal": ["100% Russian Heavy Draft"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Russian Heavy Draft", "Percheron"],
+    "foal": ["100% Russian Heavy Draft"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Salernitano", "Thoroughbred"],
+    "foal": ["100% Salernitano"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Salernitano", "Calabrese"],
+    "foal": ["50% Calabrese", "50% Salernitano"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Salernitano", "Turkoman"],
+    "foal": ["100% Salernitano"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Salernitano", "Thessalian"],
+    "foal": ["100% Salernitano"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Knabstrup"],
+    "foal": ["60% British Spotted Pony", "40% Appaloosa"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Appaloosa"],
+    "foal": ["50% British Spotted Pony", "50% Appaloosa"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Exmoor"],
+    "foal": ["50% British Spotted Pony", "50% Exmoor"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Shetland Pony"],
+    "foal": ["50% British Spotted Pony", "50% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "New Forest Pony"],
+    "foal": ["50% British Spotted Pony", "50% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Welsh Cob"],
+    "foal": ["40% British Spotted Pony", "10% Appaloosa", "40% Grade Pony", "10% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Dartmoor Pony"],
+    "foal": ["50% British Spotted Pony", "50% Dartmoor Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Pony of the Americas"],
+    "foal": ["50% British Spotted Pony", "50% Pony of the Americas"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["British Spotted Pony", "Welsh Mountain Pony"],
+    "foal": ["50% British Spotted Pony", "50% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Abaco Barb", "Spanish Barb"],
+    "foal": ["30% Abaco Barb", "70% Spanish Barb"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Sicilian", "Spanish Barb"],
+    "foal": ["10% Sicilian", "90% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Sicilian", "Lusitano"],
+    "foal": ["50% Sicilian", "50% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Sicilian", "Thessalian"],
+    "foal": ["50% Sicilian", "50% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Cape Boerperd", "American Saddlebred"],
+    "foal": ["50% Cape Boerperd", "50% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Cape Boerperd", "Hackney"],
+    "foal": ["50% Cape Boerperd", "50% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Cape Boerperd", "Java Pony"],
+    "foal": ["50% Cape Boerperd", "25% Grade Saddle Horse", "25% Grade Pony"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Appendix Quarter Horse", "American Quarter Horse"],
+    "foal": ["100% Appendix Quarter Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Norman Cob", "Orlov Trotter"],
+    "foal": ["100% French Trotter"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Norman Cob", "Thoroughbred"],
+    "foal": ["75% Selle Francais", "25% Norman Cob"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Maremmano", "Thoroughbred"],
+    "foal": ["20% Maremmano", "80% Grade Saddle Horse"]
   },
   {
-    "parents": ["", ""],
-    "foal": ["", "", ""]
+    "parents": ["Maremmano", "Arabian"],
+    "foal": ["100% Maremmano"]
+  },
+  {
+    "parents": ["Maremmano", "Spanish Barb"],
+    "foal": ["100% Maremmano"]
+  },
+  {
+    "parents": ["Georgian Grande", "Belgian"],
+    "foal": ["100% Georgian Grande"]
+  },
+  {
+    "parents": ["Georgian Grande", "Irish Draught"],
+    "foal": ["100% Georgian Grande"]
+  },
+  {
+    "parents": ["Georgian Grande", "Shire"],
+    "foal": ["100% Georgian Grande"]
+  },
+  {
+    "parents": ["Georgian Grande", "Gypsy Vanner"],
+    "foal": ["100% Georgian Grande"]
+  },
+  {
+    "parents": ["Swedish Warmblood", "Thoroughbred"],
+    "foal": ["100% Swedish Warmblood"]
+  },
+  {
+    "parents": ["Swedish Warmblood", "Trakehner"],
+    "foal": ["100% Swedish Warmblood"]
+  },
+  {
+    "parents": ["Swedish Warmblood", "Selle Francais"],
+    "foal": ["100% Swedish Warmblood"]
+  },
+  {
+    "parents": ["Swedish Warmblood", "Hanoverian"],
+    "foal": ["100% Swedish Warmblood"]
   }
 ]
