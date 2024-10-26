@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require("discord.js");
 const baseCombos = require("../../functions/datafiles/horseColors.json");
 const breeds = require("../../functions/datafiles/breeds.json");
 const horseCross = require("../../functions/datafiles/horseCross.json");
+const horseInfo = require("../../functions/datafiles/horseInfo.json");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -72,7 +73,14 @@ module.exports = {
         .setDescription("ä")
         .addStringOption((option) => option.setName("breed1").setDescription("ö").setRequired(true).setAutocomplete(true))
         .addStringOption((option) => option.setName("breed2").setDescription("ü").setRequired(true).setAutocomplete(true))
+    )
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("info")
+        .setDescription("ä")
+        .addStringOption((option) => option.setName("breed").setDescription("ö").setRequired(true).setAutocomplete(true))
     ),
+
   async autocomplete(interaction, client) {
     const focusedValue = interaction.options.getFocused();
     var choices = breeds;
@@ -119,6 +127,14 @@ module.exports = {
       case "breed":
         const firstBreed = interaction.options.getString("breed1");
         const secondBreed = interaction.options.getString("breed2");
+
+        var filtered1 = horseInfo.filter((horse) => horse.breed === firstBreed);
+        if (filtered1.length === 0)
+          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${firstBreed}__`);
+        var filtered2 = horseInfo.filter((horse) => horse.breed === secondBreed);
+        if (filtered2.length === 0)
+          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${secondBreed}__`);
+
         // loop to find the 4 results from base breeding
         for (const combo of horseCross) {
           if (
@@ -129,11 +145,36 @@ module.exports = {
             break;
           }
         }
-        if (!result) result = `25% ${firstBreed}, 25% ${secondBreed}, 50% grade`;
+        if (!result) {
+          if (
+            (filtered1[0].type === "Draft" && filtered2[0].type === "Pony") ||
+            (filtered1[0].type === "Pony" && filtered2[0].type === "Draft")
+          )
+            result = `Crossing draft horses with ponies is not permitted.`;
+          else result = `25% ${firstBreed}, 25% ${secondBreed}, 50% grade`;
+        }
 
         let breedMessage = `Parents: ${firstBreed} + ${secondBreed}\nFoal: ${result}`;
 
         return await interaction.editReply({ content: breedMessage });
+      case "info":
+        const breed = interaction.options.getString("breed");
+        // only lets through the chosen info (breed)
+        var filtered = horseInfo.filter((horse) => horse.breed === breed);
+
+        if (filtered.length === 0)
+          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
+        result = filtered[0];
+        let infoMessage = [
+          `**${result.breed}**`,
+          `Type: *${result.type}*`,
+          `Height: *${result.low.toFixed(1)} - ${result.top.toFixed(1)}*`,
+          `Terrain Found: *${result.terrain}*`,
+          `Arena Bonus: *${result.arena_bonus}*`,
+        ].join("\n");
+
+        return await interaction.editReply({ content: infoMessage });
+
       default:
         return await interaction.editReply("error message I'm so confused where am I");
     }

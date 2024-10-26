@@ -1,0 +1,1129 @@
+[
+  {
+    "breed": "Abaco Barb",
+    "type": "Saddle",
+    "low": 13.2,
+    "top": 14.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Akhal Teke",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Desert",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Alter Real",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.1,
+    "terrain": "Desert",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "American Cream Draft",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 16.3,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "American Mustang",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 16.0,
+    "terrain": "Desert",
+    "arena_bonus": "Reining, Cutting"
+  },
+  {
+    "breed": "American Paint Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Barrel Racing, Reining, Cutting"
+  },
+  {
+    "breed": "American Quarter Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Barrel Racing, Reining, Cutting"
+  },
+  {
+    "breed": "American Saddlebred",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "American White",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Andalusian",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 16.1,
+    "terrain": "Desert",
+    "arena_bonus": "Cutting"
+  },
+  {
+    "breed": "Anglo Arabian",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Desert Race, Cross Country, Jockey"
+  },
+  {
+    "breed": "Appaloosa",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.3,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Cutting"
+  },
+  {
+    "breed": "Appendix Quarter Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jockey"
+  },
+  {
+    "breed": "Arabian",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Desert",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Ardennais",
+    "type": "Draft",
+    "low": 14.3,
+    "top": 16.0,
+    "terrain": "Snow",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Argentine Polo Pony",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Plains",
+    "arena_bonus": "Barrel Racing, Reining"
+  },
+  {
+    "breed": "Australian Brumby",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 15.2,
+    "terrain": "Desert",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Australian Stock Horse",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jumping, Cutting"
+  },
+  {
+    "breed": "Azteca",
+    "type": "Saddle",
+    "low": 14.1,
+    "top": 16.0,
+    "terrain": "Desert",
+    "arena_bonus": "Reining, Cutting"
+  },
+  {
+    "breed": "Bashkir Curly",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Belgian",
+    "type": "Draft",
+    "low": 16.0,
+    "top": 19.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Black Forest Draft Horse",
+    "type": "Draft",
+    "low": 14.3,
+    "top": 15.2,
+    "terrain": "Mountain",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "British Appaloosa",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 16.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "British Spotted Pony",
+    "type": "Pony",
+    "low": 8.0,
+    "top": 14.2,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Budyonny",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.1,
+    "terrain": "Snow, Mountain",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Calabrese",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Camargue",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 14.1,
+    "terrain": "Forest, Swampy",
+    "arena_bonus": "Cutting"
+  },
+  {
+    "breed": "Campolina",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 15.2,
+    "terrain": "Jungle",
+    "arena_bonus": "Cutting"
+  },
+  {
+    "breed": "Canadian Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.3,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Cape Boerperd",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Carolina Marsh Tacky",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 15.0,
+    "terrain": "Swampy",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Caspian",
+    "type": "Saddle",
+    "low": 9.0,
+    "top": 12.0,
+    "terrain": "Desert",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Chincoteague Pony",
+    "type": "Pony",
+    "low": 12.0,
+    "top": 14.0,
+    "terrain": "Forest, Plains, Swampy",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Cleveland Bay",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Clydesdale",
+    "type": "Draft",
+    "low": 16.0,
+    "top": 18.0,
+    "terrain": "Snow",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Connemara",
+    "type": "Pony",
+    "low": 13.0,
+    "top": 14.2,
+    "terrain": "Swampy",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Criollo",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 15.1,
+    "terrain": "Jungle",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Cubano De Paso",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 15.0,
+    "terrain": "Jungle",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Dales Pony",
+    "type": "Pony",
+    "low": 14.0,
+    "top": 14.3,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Danish Warmblood",
+    "type": "Saddle",
+    "low": 15.3,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Dartmoor Pony",
+    "type": "Pony",
+    "low": 11.0,
+    "top": 13.0,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Datong",
+    "type": "Saddle",
+    "low": 10.0,
+    "top": 14.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Dole",
+    "type": "Draft",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Don",
+    "type": "Saddle",
+    "low": 15.1,
+    "top": 16.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Dutch Tuigpaard",
+    "type": "Saddle",
+    "low": 15.2,
+    "top": 17.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Dutch Warmblood",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Egyptian Arabian",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Desert",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Eriskay Pony",
+    "type": "Pony",
+    "low": 12.0,
+    "top": 13.2,
+    "terrain": "Decay",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Estonian Native Horse",
+    "type": "Saddle",
+    "low": 13.1,
+    "top": 15.1,
+    "terrain": "Mountain",
+    "arena_bonus": "Cross Country"
+  },
+  {
+    "breed": "Exmoor",
+    "type": "Pony",
+    "low": 11.0,
+    "top": 12.1,
+    "terrain": "Snow, Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Fell Pony",
+    "type": "Pony",
+    "low": 13.0,
+    "top": 14.0,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Finnhorse",
+    "type": "Saddle/Draft/Pony/Idk",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Snow",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Florida Cracker",
+    "type": "Saddle",
+    "low": 13.2,
+    "top": 15.2,
+    "terrain": "Swampy",
+    "arena_bonus": "Cutting"
+  },
+  {
+    "breed": "Franches Montagne",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Frederiksborg",
+    "type": "Saddle",
+    "low": 15.3,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "French Trotter",
+    "type": "Saddle",
+    "low": 15.1,
+    "top": 16.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Friesian",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Furioso",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.1,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Gelderland",
+    "type": "Saddle",
+    "low": 15.2,
+    "top": 16.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Georgian Grande",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Barrel Racing"
+  },
+  {
+    "breed": "Gotland Pony",
+    "type": "Pony",
+    "low": 11.1,
+    "top": 13.0,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Grade Draft Horse",
+    "type": "Draft",
+    "low": 14.3,
+    "top": 19.2,
+    "terrain": "Snow, Mountain",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Grade Pony",
+    "type": "Pony",
+    "low": 8.0,
+    "top": 14.3,
+    "terrain": "Flower, Decay",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Grade Saddle Horse",
+    "type": "Saddle",
+    "low": 12.2,
+    "top": 17.2,
+    "terrain": "Forest, Grass, Plains, Desert, Jungle, Swampy",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Groningen",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Gypsy Vanner",
+    "type": "Draft",
+    "low": 13.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Hackney",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Haflinger",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 15.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Hanoverian",
+    "type": "Saddle",
+    "low": 15.1,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Highland Pony",
+    "type": "Pony",
+    "low": 12.2,
+    "top": 14.3,
+    "terrain": "Snow, Mountain",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Hokkaido Pony",
+    "type": "Pony",
+    "low": 13.0,
+    "top": 13.2,
+    "terrain": "Mountain",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Holsteiner",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Iberian Warmblood",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Icelandic",
+    "type": "Saddle",
+    "low": 12.0,
+    "top": 14.1,
+    "terrain": "Snow",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Irish Cob",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Irish Drought",
+    "type": "Saddle",
+    "low": 15.1,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Irish Sport Horse",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Plains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Java Pony",
+    "type": "Pony",
+    "low": 12.0,
+    "top": 13.0,
+    "terrain": "Jungle",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Jutland",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 16.1,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Kaimanawa",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 16.1,
+    "terrain": "Mountain",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Kathiawari",
+    "type": "Saddle",
+    "low": 13.2,
+    "top": 15.0,
+    "terrain": "Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Kerry Bog Pony",
+    "type": "Pony",
+    "low": 10.0,
+    "top": 12.0,
+    "terrain": "Swampy",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Kiger Mustang",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Mountain",
+    "arena_bonus": "Desert Race, Cutting"
+  },
+  {
+    "breed": "Kinsky",
+    "type": "Saddle",
+    "low": 15.2,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping, Cross Country, Jockey"
+  },
+  {
+    "breed": "Knabstrup",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Lipizzan",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Lusitano",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Mangalarga Marchador",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Maremmano",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Cutting, Cross Country"
+  },
+  {
+    "breed": "Marwari",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Missouri Fox Trotter",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Mongolian Horse",
+    "type": "Saddle",
+    "low": 12.0,
+    "top": 15.0,
+    "terrain": "Snow",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Morab",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 15.3,
+    "terrain": "Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Morgan",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping, Cutting"
+  },
+  {
+    "breed": "Moyle",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 15.3,
+    "terrain": "Mountain",
+    "arena_bonus": "Cross Country, Jockey"
+  },
+  {
+    "breed": "Mulassier",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Swampy",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "National Show Horse",
+    "type": "Saddle",
+    "low": 14.3,
+    "top": 16.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "New Forest Pony",
+    "type": "Pony",
+    "low": 12.0,
+    "top": 14.2,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Newfoundland Pony",
+    "type": "Pony",
+    "low": 11.0,
+    "top": 14.2,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Nez Perce Horse",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 16.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Cross Country, Jockey"
+  },
+  {
+    "breed": "Nokota",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains, Mountains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Noriker",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Norman Cob",
+    "type": "Draft",
+    "low": 15.3,
+    "top": 16.3,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Norwegian Coldblood Trotter",
+    "type": "Draft",
+    "low": 14.2,
+    "top": 16.0,
+    "terrain": "Snow",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Norwegian Fjord",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 15.0,
+    "terrain": "Snow",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Oldenburg",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Orlov Trotter",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.2,
+    "terrain": "Grass, Plains, Snow",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Paso Fino",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 15.0,
+    "terrain": "Jungle",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Percheron",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 18.2,
+    "terrain": "Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Peruvian Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Jungle",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Plateau Persian",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.2,
+    "terrain": "Desert",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Pony of the Americas",
+    "type": "Pony",
+    "low": 11.2,
+    "top": 14.0,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Przewalski",
+    "type": "Saddle",
+    "low": 12.0,
+    "top": 14.0,
+    "terrain": "Snow",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Racking Horse",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Rocky Mountain Horse",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Russian Heavy Draft",
+    "type": "Draft",
+    "low": 14.1,
+    "top": 15.0,
+    "terrain": "Snow",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Salernitano",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Selle Francais",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping, Cross Country"
+  },
+  {
+    "breed": "Shagya Arabian",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Shetland Pony",
+    "type": "Pony",
+    "low": 8.0,
+    "top": 10.2,
+    "terrain": "Decay",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Shire",
+    "type": "Draft",
+    "low": 16.0,
+    "top": 19.2,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Sicilian",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Sorraia",
+    "type": "Saddle",
+    "low": 12.2,
+    "top": 13.2,
+    "terrain": "Desert",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Spanish Barb",
+    "type": "Saddle",
+    "low": 13.3,
+    "top": 15.0,
+    "terrain": "Desert",
+    "arena_bonus": "Desert Race"
+  },
+  {
+    "breed": "Spanish Mustang",
+    "type": "Saddle",
+    "low": 13.0,
+    "top": 15.2,
+    "terrain": "Mountain",
+    "arena_bonus": "Barrel Racing"
+  },
+  {
+    "breed": "Spotted Draft Horse",
+    "type": "Draft",
+    "low": 15.2,
+    "top": 18.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Standardbred",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Suffolk Punch",
+    "type": "Draft",
+    "low": 16.1,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Draft"
+  },
+  {
+    "breed": "Sugarbush Draft Horse",
+    "type": "Draft",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass",
+    "arena_bonus": "Barrel Racing"
+  },
+  {
+    "breed": "Swedish Warmblood",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Tennessee Walking Horse",
+    "type": "Saddle",
+    "low": 14.1,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Tersky",
+    "type": "Saddle",
+    "low": 14.3,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Jumping"
+  },
+  {
+    "breed": "Thessalian",
+    "type": "Saddle",
+    "low": 14.0,
+    "top": 15.0,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Thoroughbred",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Cross Country, Jockey"
+  },
+  {
+    "breed": "Trakehner",
+    "type": "Saddle",
+    "low": 16.0,
+    "top": 17.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "Cross Country"
+  },
+  {
+    "breed": "Turkoman",
+    "type": "Saddle",
+    "low": 14.2,
+    "top": 16.0,
+    "terrain": "Desert",
+    "arena_bonus": "Desert Race, Cross Country, Jockey"
+  },
+  {
+    "breed": "Waler",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 16.0,
+    "terrain": "Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Warlander",
+    "type": "Saddle",
+    "low": 15.0,
+    "top": 17.0,
+    "terrain": "Forrest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Welsh Cob",
+    "type": "Draft",
+    "low": 13.2,
+    "top": 16.0,
+    "terrain": "Forest, Grass, Plains",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Welsh Mountain Pony",
+    "type": "Pony",
+    "low": 10.0,
+    "top": 12.2,
+    "terrain": "Flower",
+    "arena_bonus": "None"
+  },
+  {
+    "breed": "Westphalian",
+    "type": "Saddle",
+    "low": 15.2,
+    "top": 16.2,
+    "terrain": "Grass, Plains",
+    "arena_bonus": "Jumping"
+  }
+]
