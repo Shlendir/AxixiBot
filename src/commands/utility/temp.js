@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -28,10 +28,14 @@ module.exports = {
     const first_temp = interaction.options.getNumber("temp"); //the number they gave
     const unit2 = interaction.options.getString("to"); //whatever the fuck they want to convert to
     let last_temp = 0; //what it results to
-    let newMessage = "";
+    let embed = null;
 
     // if ppl chose the same damn units
-    if (unit1 === unit2) newMessage = `${first_temp}°${unit1}`;
+    if (unit1 === unit2)
+      embed = new EmbedBuilder()
+        .setTitle("Temperature conversion")
+        .setDescription(`${first_temp}°${unit1}`)
+        .setColor(0xa1c1d9);
     else {
       if (unit1 === "C") {
         if (unit2 === "F") last_temp = first_temp * (9 / 5) + 32; // c to f
@@ -44,10 +48,25 @@ module.exports = {
         else if (unit2 === "F") last_temp = first_temp * (9 / 5) - 459.67; // k to f
       }
 
-      const rounded = last_temp.toFixed(2); //rounds it 
+      const rounded = last_temp.toFixed(2); //rounds it
 
-      newMessage = `${first_temp}°${unit1} equals to ${rounded}°${unit2}`; //result message
+      embed = new EmbedBuilder()
+        .setTitle("Temperature conversion")
+        .setColor(0xa1c1d9)
+        .addFields([
+          {
+            name: unit1 === "C" ? "Celsius" : unit1 === "F" ? "Fahrenheit" : "Kelvin",
+            value: `${first_temp}°${unit1}`,
+            inline: true,
+          },
+          {
+            name: unit2 === "C" ? "Celsius" : unit2 === "F" ? "Fahrenheit" : "Kelvin",
+            value: `${rounded}°${unit2}`,
+            inline: true,
+          },
+        ]);
+      //result message ^^
     }
-    await interaction.editReply({ content: newMessage });
+    await interaction.editReply({ embeds: [embed] });
   },
 };

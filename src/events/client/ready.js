@@ -8,6 +8,7 @@ module.exports = {
   async execute(client) {
     await loadCommands(client);
     console.log(`Ready!! ${client.user.tag} is logged in and online.`);
+    console.timeEnd("launch");
   },
 };
 

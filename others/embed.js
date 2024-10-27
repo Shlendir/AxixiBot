@@ -3,10 +3,12 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder().setName("embedtest").setDescription("Returns an embed."),
   async execute(interaction, client) {
+    
+    //add embeds to code starting from this
     const embed = new EmbedBuilder()
       .setTitle(`This is an EMBED!`)
       .setDescription("This is a very cool description!")
-      .setColor(0xffccc)
+      .setColor(0xffcccc)
       .setImage(client.user.displayAvatarURL()) //big image
       .setThumbnail(client.user.displayAvatarURL()) //small image
       .setTimestamp(Date.now())

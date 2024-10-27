@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const balls = [
   "It is certain.",
   "It is decidedly so.",
@@ -20,12 +20,16 @@ module.exports = {
     await interaction.deferReply({ fetchReply: true });
 
     let question = interaction.options.getString("question");
-    let newMessage = "";
-    if (question) newMessage = `Your question: "${question}"\n`;
-    
-    let randomNumber = Math.floor(Math.random() * 8);
-    newMessage += `> *${balls[randomNumber]}*`;
+    question = question ? `Question: "${question}"\n` : null;
 
-    await interaction.editReply({ content: newMessage });
+    let randomIndex = Math.floor(Math.random() * 8);
+
+    const embed = new EmbedBuilder()
+      .setTitle("EightBall")
+      .setDescription(question)
+      .setColor(0xa1c1d9)
+      .addFields([{ name: "Answer:", value: `> *${balls[randomIndex]}*` }]);
+
+    await interaction.editReply({ embeds: [embed] });
   },
 };

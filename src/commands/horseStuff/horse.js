@@ -7,7 +7,7 @@ const horseInfo = require("../../functions/datafiles/horseInfo.json");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("horse")
-    .setDescription("Find foal information: base colors, crosses or height.")
+    .setDescription("Find foal information: base colors, crosses, height, etc.")
     .addSubcommand((subcommand) =>
       subcommand
         .setName("color")
@@ -70,15 +70,15 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("breed")
-        .setDescription("ä")
-        .addStringOption((option) => option.setName("breed1").setDescription("ö").setRequired(true).setAutocomplete(true))
-        .addStringOption((option) => option.setName("breed2").setDescription("ü").setRequired(true).setAutocomplete(true))
+        .setDescription("Find breed crossing information.")
+        .addStringOption((option) => option.setName("breed1").setDescription("First parent's breed.").setRequired(true).setAutocomplete(true))
+        .addStringOption((option) => option.setName("breed2").setDescription("Second parent's breed.").setRequired(true).setAutocomplete(true))
     )
     .addSubcommand((subcommand) =>
       subcommand
         .setName("info")
-        .setDescription("ä")
-        .addStringOption((option) => option.setName("breed").setDescription("ö").setRequired(true).setAutocomplete(true))
+        .setDescription("Search up main info about a breed.")
+        .addStringOption((option) => option.setName("breed").setDescription("The name of the breed you want to seach.").setRequired(true).setAutocomplete(true))
     ),
 
   async autocomplete(interaction, client) {
@@ -150,7 +150,7 @@ module.exports = {
             (filtered1[0].type === "Draft" && filtered2[0].type === "Pony") ||
             (filtered1[0].type === "Pony" && filtered2[0].type === "Draft")
           )
-            result = `Crossing draft horses with ponies is not permitted.`;
+            result = `**Crossing draft horses with ponies is not permitted.**`;
           else result = `25% ${firstBreed}, 25% ${secondBreed}, 50% grade`;
         }
 
