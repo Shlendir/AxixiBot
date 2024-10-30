@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose")
 const breedlistSchema = new Schema({
     _id: Schema.Types.ObjectId,
     discordId: String,
-    fullUsername: String,
+    hiUsername: String,
     breed: String,
     wilds: Boolean,
     statsPersona: { type: String, required: false },
