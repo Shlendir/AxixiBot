@@ -42,33 +42,58 @@ module.exports = {
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
 
-    switch (interaction.options.getSubcommand(false)){
+    try {
+      switch (interaction.options.getSubcommand(false)) {
         //
         case "add":
-            const hiuser = interaction.options.getString("hi-user");
-            const breed = interaction.options.getString("breed");
-            const wilds = interaction.options.getBoolean("wilds");
-            const stats = interaction.options.getString("stats") || null;
-            const color = interaction.options.getString("color") || null;
-            const markings = interaction.options.getString("markings") || null;
-            const notes = interaction.options.getString("notes") || null;
+          return await breedAdd(interaction, client);
 
-            await Breedlist.create({
-                _id: new mongoose.Types.ObjectId(),
-                discordId: interaction.user.id,
-                hiUsername: hiuser,
-                breed: breed,
-                wilds: wilds,
-                statsPersona: stats,
-                color: color,
-                markings: markings,
-                notes: notes,
-              });
+        default:
+          return await interaction.editReply("How the fuck did you get this? Probs tag @ dev");
+      }
+    } catch (err) {
+      console.log(err);
+      return await interaction.editReply("Something went wrong while executing the command.");
     }
-    console.log(interaction.user);
-
-    const embed = new EmbedBuilder().setTitle("[wip]").setColor(0x9acd32);
-
-    await interaction.editReply({ embeds: [embed] });
   },
 };
+
+async function breedAdd(interaction, client) {
+  const hiuser = interaction.options.getString("hi-user");
+  const breed = interaction.options.getString("breed");
+  var filtered = breeds.filter((horse) => horse.breed === breed);
+  if (filtered.length === 0)
+    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
+  const wilds = interaction.options.getBoolean("wilds");
+  const stats = interaction.options.getString("stats") || null;
+  const color = interaction.options.getString("color") || null;
+  const markings = interaction.options.getString("markings") || null;
+  const notes = interaction.options.getString("notes") || null;
+
+  let breedlistObject = await Breedlist.findOne({ hiUsername: hiuser, breed: breed });
+  if (breedlistObject)
+    return await interaction.editReply(
+      `${hiuser} already has a ${breed} horse registered.\nDo "/breed edit" to edit info or do "/breed remove" to remove the breed.`
+    );
+
+  await Breedlist.create({
+    _id: new mongoose.Types.ObjectId(),
+    discordId: interaction.user.id,
+    hiUsername: hiuser,
+    breed: breed,
+    wilds: wilds,
+    statsPersona: stats,
+    color: color,
+    markings: markings,
+    notes: notes,
+  });
+  let message = [`__Added to ${hiuser}'s list.__`, ``, `**Breed:** ${breed}`, `**Wilds:** ${wilds ? "yes" : "no"}`];
+  if (stats) message.push(`**Stats:** ${stats}`);
+  if (color) message.push(`**Color info:** ${color}`);
+  if (markings) message.push(`**Markings info:** ${markings}`);
+  if (notes) message.push(`**Extra notes:**\n${notes}`);
+
+  const embed = new EmbedBuilder().setTitle("Breed added.").setDescription(message.join("\n")).setColor(0x9acd32);
+
+  await interaction.editReply({ embeds: [embed] });
+}
