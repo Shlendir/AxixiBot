@@ -5,6 +5,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("currency")
     .setDescription("Convert currencies.")
+    // "from" what currency option
     .addStringOption((option) =>
       option
         .setName("from")
@@ -20,7 +21,9 @@ module.exports = {
           { name: "NorwegianKrone", value: "NOK" }
         )
     )
+    // "amount" of the mons
     .addNumberOption((option) => option.setName("amount").setDescription("How much to convert?").setRequired(true).setMinValue(0))
+    // "to" what currency
     .addStringOption((option) =>
       option
         .setName("to")
@@ -36,6 +39,7 @@ module.exports = {
           { name: "NorwegianKrone", value: "NOK" }
         )
     ),
+
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
     // output message

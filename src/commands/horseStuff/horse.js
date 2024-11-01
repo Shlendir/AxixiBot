@@ -8,6 +8,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("horse")
     .setDescription("Find foal information: base colors, crosses, height, etc.")
+    // color command
     .addSubcommand((subcommand) =>
       subcommand
         .setName("color")
@@ -67,18 +68,30 @@ module.exports = {
             )
         )
     )
+    // breed command
     .addSubcommand((subcommand) =>
       subcommand
         .setName("breed")
         .setDescription("Find breed crossing information.")
-        .addStringOption((option) => option.setName("breed1").setDescription("First parent's breed.").setRequired(true).setAutocomplete(true))
-        .addStringOption((option) => option.setName("breed2").setDescription("Second parent's breed.").setRequired(true).setAutocomplete(true))
+        .addStringOption((option) =>
+          option.setName("breed1").setDescription("First parent's breed.").setRequired(true).setAutocomplete(true)
+        )
+        .addStringOption((option) =>
+          option.setName("breed2").setDescription("Second parent's breed.").setRequired(true).setAutocomplete(true)
+        )
     )
+    // info command
     .addSubcommand((subcommand) =>
       subcommand
         .setName("info")
         .setDescription("Search up main info about a breed.")
-        .addStringOption((option) => option.setName("breed").setDescription("The name of the breed you want to seach.").setRequired(true).setAutocomplete(true))
+        .addStringOption((option) =>
+          option
+            .setName("breed")
+            .setDescription("The name of the breed you want to seach.")
+            .setRequired(true)
+            .setAutocomplete(true)
+        )
     ),
 
   async autocomplete(interaction, client) {
@@ -95,7 +108,7 @@ module.exports = {
     let result = null;
 
     switch (interaction.options.getSubcommand(false)) {
-      // color subcommand
+      // color command reply
       case "color":
         const firstChoice = interaction.options.getString("color1");
         const secondChoice = interaction.options.getString("color2");
@@ -123,7 +136,7 @@ module.exports = {
 
         return await interaction.editReply({ content: newMessage });
 
-      /// breed subcommand
+      // breed command reply
       case "breed":
         const firstBreed = interaction.options.getString("breed1");
         const secondBreed = interaction.options.getString("breed2");
@@ -157,6 +170,7 @@ module.exports = {
         let breedMessage = `Parents: ${firstBreed} + ${secondBreed}\nFoal: ${result}`;
 
         return await interaction.editReply({ content: breedMessage });
+      // info command reply
       case "info":
         const breed = interaction.options.getString("breed");
         // only lets through the chosen info (breed)

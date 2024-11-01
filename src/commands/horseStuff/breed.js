@@ -7,6 +7,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("breed")
     .setDescription("Set up your breeding list.")
+    // Add command
     .addSubcommand((subcommand) =>
       subcommand
         .setName("add")
@@ -44,10 +45,8 @@ module.exports = {
 
     try {
       switch (interaction.options.getSubcommand(false)) {
-        //
         case "add":
           return await breedAdd(interaction, client);
-
         default:
           return await interaction.editReply("How the fuck did you get this? Probs tag @ dev");
       }
@@ -58,6 +57,7 @@ module.exports = {
   },
 };
 
+// breed add command
 async function breedAdd(interaction, client) {
   const hiuser = interaction.options.getString("hi-user");
   const breed = interaction.options.getString("breed");
