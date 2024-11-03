@@ -27,8 +27,12 @@ module.exports = {
         .addStringOption((option) =>
           option.setName("breed").setDescription("The name of the breed you want to add.").setRequired(true).setAutocomplete(true)
         )
-        .addBooleanOption((option) =>
-          option.setName("wilds").setDescription("Do you want wilds in that breed?").setRequired(true)
+        .addStringOption((option) =>
+          option
+            .setName("wilds")
+            .setDescription("Do you want wilds in that breed?")
+            .setRequired(true)
+            .addChoices({ name: "Yes", value: "True" }, { name: "No", value: "False" })
         )
         .addStringOption((option) =>
           option.setName("stats").setDescription(`(stat + persona) There is 15 char limit.`).setRequired(false).setMaxLength(15)
@@ -51,8 +55,12 @@ module.exports = {
             .setRequired(true)
             .setAutocomplete(true)
         )
-        .addBooleanOption((option) =>
-          option.setName("wilds").setDescription("Do you want wilds in that breed?").setRequired(false)
+        .addStringOption((option) =>
+          option
+            .setName("wilds")
+            .setDescription("Do you want wilds in that breed?")
+            .setRequired(true)
+            .addChoices({ name: "Yes", value: "True" }, { name: "No", value: "False" })
         )
         .addStringOption((option) =>
           option.setName("stats").setDescription(`(stat + persona) There is 15 char limit.`).setRequired(false).setMaxLength(15)
@@ -101,38 +109,65 @@ module.exports = {
 
 ///----- register command -----///
 async function userAdd(interaction, client, hiuserObject) {
-  const hiuser = interaction.options.getString("hi-user").replaceAll(" ", "");
-  let newUser = interaction.options.getString("new-user");
+  const hiuser = interaction.options.getString("hi-user").replace(/[^a-zA-Z]/g, "");
+  // wrong username probably
+  if (!hiuser || hiuser === "") return await interaction.editReply("Please enter a valid HI username.");
 
-  //--- if already registered
+  let newUser = interaction.options.getString("new-user");
+  ///--- if already registered, renaming
   if (hiuserObject) {
     // tried to re-register or failed to rename themselves
-    if (!newUser)
+    if (!newUser) {
       return await interaction.editReply(
         `Your Discord account already has a HI user connected.\nTo rename your HI username, add your new name in "new-user". If you want to disconnect your Discord account @ dev.`
       );
-    newUser = newUser.replaceAll(" ", "");
+    }
+    newUser = newUser.replace(/[^a-zA-Z]/g, "");
+    if (!newUser || newUser === "") return await interaction.editReply("Please enter a valid HI username.");
 
     // probably dyslexic (like me :D)
-    if (hiuserObject.hiUsername !== hiuser)
+    if (hiuserObject.hiUsername !== hiuser) {
       return await interaction.editReply(
-        `HI username you wrote does not match the one connected to your Discord account.\nYou wrote: __${hiuser}__`
+        `HI username you wrote does not match the one connected to your Discord account. It's case sensitive.\nYou wrote: "${hiuser}"`
       );
+    }
+    // they tried to rename themselves to the same thing
+    if (hiuser === newUser) return await interaction.editReply(`HI username "${newUser}" is already taken... By you.`);
     // someone either didn't rename their user or stole someone elses
-    let yoinkedObject = await Hiuser.findOne({ hiUsername: newUser });
-    if (yoinkedObject)
-      return await interaction.editReply(`HI username ${newUser} is already taken. If it's your IG username @ dev.`);
-    // rename
-    await hiuser.updateOne(
+    let yoinkedObject = await Hiuser.findOne({ hiUsername: new RegExp("^" + newUser + "$", "i") });
+    if (yoinkedObject) {
+      if (yoinkedObject.id !== hiuserObject.id)
+        return await interaction.editReply(`HI username "${newUser}" is already taken. If it's your IG username @ dev.`);
+    }
+
+    //--- rename ---//
+    await Hiuser.updateOne(
       { _id: hiuserObject.id },
       { hiUsername: newUser, dateEdited: new Date(), serverId: interaction.guild.id }
     );
-    return await interaction.editReply(`Connected HI username renamed to __${hiuser}__.`);
+    return await interaction.editReply(`Connected HI username renamed to "${newUser}".`);
   }
-  //--- registering
-  //
-  //
-  //
+  ///--- registering
+  let dumbass = ""; // if they register and rename with the same name????
+  if (newUser) {
+    newUser = newUser.replace(/[^a-zA-Z]/g, "");
+    if (hiuser === newUser) dumbass = `.. But you didn't need to write it twice.`;
+    else return await interaction.editReply("Please register first by giving only your HI username once.");
+  }
+  // registering but username taken
+  let yoinkedObject = await Hiuser.findOne({ hiUsername: new RegExp("^" + hiuser + "$", "i") });
+  if (yoinkedObject)
+    return await interaction.editReply(`HI username "${hiuser}" is already taken. If it's your IG username @ dev.`);
+
+  //--- Actually registering ---//
+  await Hiuser.create({
+    _id: new mongoose.Types.ObjectId(),
+    discordId: interaction.user.id,
+    hiUsername: hiuser,
+    dateEdited: new Date(),
+    serverId: interaction.guild.id,
+  });
+  return await interaction.editReply(`User "${hiuser}" registered successfully.` + dumbass);
 }
 
 ///----- breed add command -----///
@@ -140,9 +175,8 @@ async function breedAdd(interaction, client, hiuserObject) {
   const hiuser = hiuserObject.hiUsername;
   const breed = interaction.options.getString("breed");
   var filtered = breeds.filter((horse) => horse.breed === breed);
-  if (filtered.length === 0)
-    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
-  const wilds = interaction.options.getBoolean("wilds");
+  if (filtered.length === 0) return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
+  const wilds = interaction.options.getString("wilds") === "True" ? true : false;
   const stats = interaction.options.getString("stats") || null;
   const color = interaction.options.getString("color") || null;
   const markings = interaction.options.getString("markings") || null;
@@ -151,7 +185,7 @@ async function breedAdd(interaction, client, hiuserObject) {
   let breedlistObject = await Breedlist.findOne({ discordId: interaction.user.id, breed: breed });
   if (breedlistObject)
     return await interaction.editReply(
-      `${hiuser} already has a ${breed} horse registered.\nDo "/breed edit" to edit info or do "/breed remove" to remove the breed.`
+      `"${hiuser}" already has a "${breed}" horse registered.\nDo "/breed edit" to edit info or do "/breed remove" to remove the breed.`
     );
 
   await Breedlist.create({
@@ -164,7 +198,7 @@ async function breedAdd(interaction, client, hiuserObject) {
     markings: markings,
     notes: notes,
   });
-  let message = [`__Added to ${hiuser}'s list.__`, ``, `**Breed:** ${breed}`, `**Wilds:** ${wilds ? "yes" : "no"}`];
+  let message = [`__Added to "${hiuser}"s list.__`, ``, `**Breed:** ${breed}`, `**Wilds:** ${wilds ? "yes" : "no"}`];
   if (stats) message.push(`**Stats:** ${stats}`);
   if (color) message.push(`**Color info:** ${color}`);
   if (markings) message.push(`**Markings info:** ${markings}`);
@@ -180,13 +214,13 @@ async function breedEdit(interaction, client, hiuserObject) {
   const hiuser = hiuserObject.hiUsername;
   const breed = interaction.options.getString("breed");
   var filtered = breeds.filter((horse) => horse.breed === breed);
-  if (filtered.length === 0)
-    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
+  if (filtered.length === 0) return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
 
   let breedlistObject = await Breedlist.findOne({ discordId: interaction.user.id, breed: breed });
-  if (!breedlistObject) return await interaction.editReply(`${breed} hasn't been registered in ${hiuser}'s list.`);
+  if (!breedlistObject) return await interaction.editReply(`"${breed}" hasn't been registered in "${hiuser}"s list.`);
 
-  const wilds = interaction.options.getBoolean("wilds") || null;
+  let wilds = interaction.options.getString("wilds") || null;
+  if (wilds) wilds = wilds === "True" ? true : false;
   const stats = interaction.options.getString("stats") || null;
   const color = interaction.options.getString("color") || null;
   const markings = interaction.options.getString("markings") || null;
