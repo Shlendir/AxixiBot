@@ -47,7 +47,7 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("edit")
-        .setDescription("Edit a breed on your current list.")
+        .setDescription('Edit a breed on your current list. Write "delete" or "remove" to delete field.')
         .addStringOption((option) =>
           option
             .setName("breed")
@@ -70,6 +70,19 @@ module.exports = {
           option.setName("markings").setDescription("Edit the markings preferences.").setRequired(false)
         )
         .addStringOption((option) => option.setName("notes").setDescription("Edit the notes.").setRequired(false))
+    )
+    // Remove command
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("remove")
+        .setDescription("Remove a breed from your current list.")
+        .addStringOption((option) =>
+          option
+            .setName("breed")
+            .setDescription("The name of the breed you want to remove.")
+            .setRequired(true)
+            .setAutocomplete(true)
+        )
     ),
 
   async autocomplete(interaction, client) {
@@ -98,6 +111,7 @@ module.exports = {
         case "register": return await userAdd(interaction, client, hiuserObject); //ppl adding their username to disc
         case "add": return await breedAdd(interaction, client, hiuserObject); //ppl adding their breeds
         case "edit": return await breedEdit(interaction, client, hiuserObject); //edit breeds
+        case "remove": return await breedRemove(interaction, client, hiuserObject); //remove a breed from user's list
         default: return await interaction.editReply("How the fuck did you get this? Probs tag @ dev"); //I fucked something up
       }
     } catch (err) {
@@ -147,7 +161,8 @@ async function userAdd(interaction, client, hiuserObject) {
     );
     return await interaction.editReply(`Connected HI username renamed to "${newUser}".`);
   }
-  ///--- registering
+
+  ///--- if only registering
   let dumbass = ""; // if they register and rename with the same name????
   if (newUser) {
     newUser = newUser.replace(/[^a-zA-Z]/g, "");
@@ -174,7 +189,7 @@ async function userAdd(interaction, client, hiuserObject) {
 async function breedAdd(interaction, client, hiuserObject) {
   const hiuser = hiuserObject.hiUsername;
   const breed = interaction.options.getString("breed");
-  var filtered = breeds.filter((horse) => horse.breed === breed);
+  var filtered = breeds.filter((horse) => horse.name === breed);
   if (filtered.length === 0) return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
   const wilds = interaction.options.getString("wilds") === "True" ? true : false;
   const stats = interaction.options.getString("stats") || null;
@@ -198,14 +213,9 @@ async function breedAdd(interaction, client, hiuserObject) {
     markings: markings,
     notes: notes,
   });
-  let message = [`__Added to "${hiuser}"s list.__`, ``, `**Breed:** ${breed}`, `**Wilds:** ${wilds ? "yes" : "no"}`];
-  if (stats) message.push(`**Stats:** ${stats}`);
-  if (color) message.push(`**Color info:** ${color}`);
-  if (markings) message.push(`**Markings info:** ${markings}`);
-  if (notes) message.push(`**Extra notes:**\n${notes}`);
 
-  const embed = new EmbedBuilder().setTitle("Breed added.").setDescription(message.join("\n")).setColor(0x9acd32);
-
+  // embed reply
+  const embed = await formatEmbed(interaction.user.id, breed, `__Added to "${hiuser}"s list.__`, "Breed added.");
   await interaction.editReply({ embeds: [embed] });
 }
 
@@ -213,16 +223,71 @@ async function breedAdd(interaction, client, hiuserObject) {
 async function breedEdit(interaction, client, hiuserObject) {
   const hiuser = hiuserObject.hiUsername;
   const breed = interaction.options.getString("breed");
-  var filtered = breeds.filter((horse) => horse.breed === breed);
+  var filtered = breeds.filter((horse) => horse.name === breed);
   if (filtered.length === 0) return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
 
+  // grab stuff from user's list
   let breedlistObject = await Breedlist.findOne({ discordId: interaction.user.id, breed: breed });
   if (!breedlistObject) return await interaction.editReply(`"${breed}" hasn't been registered in "${hiuser}"s list.`);
 
-  let wilds = interaction.options.getString("wilds") || null;
+  // optional fields to edit
+  let wilds = interaction.options.getString("wilds");
   if (wilds) wilds = wilds === "True" ? true : false;
-  const stats = interaction.options.getString("stats") || null;
-  const color = interaction.options.getString("color") || null;
-  const markings = interaction.options.getString("markings") || null;
-  const notes = interaction.options.getString("notes") || null;
+  else wilds = breedlistObject.wilds;
+  let stats = interaction.options.getString("stats") || breedlistObject.statsPersona;
+  if (stats === "delete" || stats === "remove" || stats === "d.") stats = null;
+  let color = interaction.options.getString("color") || breedlistObject.color;
+  if (color === "delete" || color === "remove" || color === "d.") color = null;
+  let markings = interaction.options.getString("markings") || breedlistObject.markings;
+  if (markings === "delete" || markings === "remove" || markings === "d.") markings = null;
+  let notes = interaction.options.getString("notes") || breedlistObject.notes;
+  if (notes === "delete" || notes === "remove" || notes === "d.") notes = null;
+
+  // updating database after user edit
+  await Breedlist.updateOne(
+    { _id: breedlistObject.id },
+    { wilds: wilds, statsPersona: stats, color: color, markings: markings, notes: notes }
+  );
+
+  // embed reply
+  const embed = await formatEmbed(interaction.user.id, breed, `__Edited "${hiuser}"s breed list.__`, "Breed edited.");
+  await interaction.editReply({ embeds: [embed] });
+}
+
+async function breedRemove(interaction, client, hiuserObject) {
+  const hiuser = hiuserObject.hiUsername;
+  const breed = interaction.options.getString("breed");
+  var filtered = breeds.filter((horse) => horse.name === breed);
+  if (filtered.length === 0) return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
+
+  // grab stuff from user's list
+  let breedlistObject = await Breedlist.findOne({ discordId: interaction.user.id, breed: breed });
+  if (!breedlistObject) return await interaction.editReply(`"${breed}" hasn't been registered in "${hiuser}"s list.`);
+
+  await breedlistObject.deleteOne().catch(console.error);
+
+  const embed = new EmbedBuilder()
+    .setTitle("Breed removed.")
+    .setDescription(`__"${breed}" has been removed from "${hiuser}"s list.__`)
+    .setColor(0x9acd32);
+
+  await interaction.editReply({ embeds: [embed] });
+}
+
+///----- formatting output text -----///
+async function formatEmbed(userId, breed, msgHeadline, theTitle) {
+  let breedlistObject = await Breedlist.findOne({ discordId: userId, breed: breed });
+  // err
+  if (!breedlistObject) return await interaction.editReply(`Dev: "This object got lost somewhere idk, I'll try to find it."`);
+
+  // embed for breed commands
+  let message = [msgHeadline, ``, `**Breed:** ${breedlistObject.breed}`, `**Wilds:** ${breedlistObject.wilds ? "yes" : "no"}`];
+  if (breedlistObject.stats) message.push(`**Stats:** ${breedlistObject.stats}`);
+  if (breedlistObject.color) message.push(`**Color info:** ${breedlistObject.color}`);
+  if (breedlistObject.markings) message.push(`**Markings info:** ${breedlistObject.markings}`);
+  if (breedlistObject.notes) message.push(`**Extra notes:**\n${breedlistObject.notes}`);
+
+  const embed = new EmbedBuilder().setTitle(theTitle).setDescription(message.join("\n")).setColor(0x9acd32);
+
+  return embed;
 }
