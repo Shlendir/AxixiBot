@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 const balls = [
   "It is certain.",
   "It is decidedly so.",
@@ -24,12 +24,8 @@ module.exports = {
 
     let randomIndex = Math.floor(Math.random() * 8);
 
-    const embed = new EmbedBuilder()
-      .setTitle("EightBall")
-      .setDescription(question)
-      .setColor(0xa1c1d9)
-      .addFields([{ name: "Answer:", value: `> *${balls[randomIndex]}*` }]);
-
+    // output embed
+    const embed = client.makeEmbed("EightBall.", question, 0xa1c1d9, [{ name: "Answer:", value: `> *${balls[randomIndex]}*` }]);
     await interaction.editReply({ embeds: [embed] });
   },
 };

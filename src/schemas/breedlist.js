@@ -8,6 +8,7 @@ const breedlistSchema = new Schema({
     color: { type: String, required: false },
     markings: { type: String, required: false },
     notes: { type: String, required: false },
+    dateEdited: Date,
 });
 
 module.exports = model("Breedlist", breedlistSchema, "breedlists");

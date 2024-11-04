@@ -42,19 +42,25 @@ module.exports = {
 
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
-    // output message
     const from = interaction.options.getString("from");
     const amount = interaction.options.getNumber("amount");
     const to = interaction.options.getString("to");
+    let embed = null;
 
-    // the fetch and url n how it changes
-    let url = `https://v6.exchangerate-api.com/v6/${currencyKey}/pair/${from}/${to}/${amount}`;
-    let request = await fetch(url);
-    let res = await request.json();
- 
-    let result = res.conversion_result.toFixed(2); //makes sure its two places after the dot and no more
+    if (from === to)
+      // output embed if same currency
+      embed = client.makeEmbed("Convert currencies.", `${amount} ${from}`, 0xa1c1d9);
+    else {
+      // the fetch and url with interact inputs
+      let url = `https://v6.exchangerate-api.com/v6/${currencyKey}/pair/${from}/${to}/${amount}`;
+      let request = await fetch(url);
+      let res = await request.json();
 
-    let newMessage = `${amount} ${from} --> ${result} ${to}`; //message
-    await interaction.editReply({ content: newMessage });
+      let result = res.conversion_result.toFixed(2); //makes sure its two places after the dot and no more
+
+      // output embed
+      embed = client.makeEmbed("Convert currencies.", `${amount} ${from} --> ${result} ${to}`, 0xa1c1d9);
+    }
+    await interaction.editReply({ embeds: [embed] });
   },
 };

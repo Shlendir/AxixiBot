@@ -105,92 +105,109 @@ module.exports = {
 
   async execute(interaction, client) {
     await interaction.deferReply({ fetchReply: true });
-    let result = null;
 
+    //prettier-ignore
     switch (interaction.options.getSubcommand(false)) {
-      // color command reply
-      case "color":
-        const firstChoice = interaction.options.getString("color1");
-        const secondChoice = interaction.options.getString("color2");
-        // loop to find the 4 results from base breeding
-        for (const combo of baseCombos) {
-          if (
-            (combo.baseColor[0] === firstChoice && combo.baseColor[1] === secondChoice) ||
-            (combo.baseColor[1] === firstChoice && combo.baseColor[0] === secondChoice)
-          ) {
-            let sames = [];
-            result = [];
-            for (const color of combo.baseResult) {
-              if (sames.includes(color)) continue;
-              let count = combo.baseResult.filter((c) => c === color).length;
-              result.push(`${count * 25}% ${color}`);
-              sames.push(color);
-            }
-            result = result.join(", ");
-            break;
-          }
-        }
-        if (!result) return await interaction.editReply("How the fuck did you get this? Probs tag @ dev");
-
-        let newMessage = `Bases: ${firstChoice} + ${secondChoice}\nResults: ${result}`;
-
-        return await interaction.editReply({ content: newMessage });
-
-      // breed command reply
-      case "breed":
-        const firstBreed = interaction.options.getString("breed1");
-        const secondBreed = interaction.options.getString("breed2");
-
-        var filtered1 = horseInfo.filter((horse) => horse.breed === firstBreed);
-        if (filtered1.length === 0)
-          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${firstBreed}__`);
-        var filtered2 = horseInfo.filter((horse) => horse.breed === secondBreed);
-        if (filtered2.length === 0)
-          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${secondBreed}__`);
-
-        // loop to find the 4 results from base breeding
-        for (const combo of horseCross) {
-          if (
-            (combo.parents[0] === firstBreed && combo.parents[1] === secondBreed) ||
-            (combo.parents[1] === firstBreed && combo.parents[0] === secondBreed)
-          ) {
-            result = combo.foal.join(", ");
-            break;
-          }
-        }
-        if (!result) {
-          if (
-            (filtered1[0].type === "Draft" && filtered2[0].type === "Pony") ||
-            (filtered1[0].type === "Pony" && filtered2[0].type === "Draft")
-          )
-            result = `**Crossing draft horses with ponies is not permitted.**`;
-          else result = `25% ${firstBreed}, 25% ${secondBreed}, 50% grade`;
-        }
-
-        let breedMessage = `Parents: ${firstBreed} + ${secondBreed}\nFoal: ${result}`;
-
-        return await interaction.editReply({ content: breedMessage });
-      // info command reply
-      case "info":
-        const breed = interaction.options.getString("breed");
-        // only lets through the chosen info (breed)
-        var filtered = horseInfo.filter((horse) => horse.breed === breed);
-
-        if (filtered.length === 0)
-          return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
-        result = filtered[0];
-        let infoMessage = [
-          `**${result.breed}**`,
-          `Type: *${result.type}*`,
-          `Height: *${result.low.toFixed(1)} - ${result.top.toFixed(1)}*`,
-          `Terrain Found: *${result.terrain}*`,
-          `Arena Bonus: *${result.arena_bonus}*`,
-        ].join("\n");
-
-        return await interaction.editReply({ content: infoMessage });
+      case "color": return await hColor(interaction, client); // color command case
+      case "breed": return await hBreed(interaction, client); // breed command case
+      case "info":return await hInfo(interaction, client); // info command reply
 
       default:
         return await interaction.editReply("error message I'm so confused where am I");
     }
   },
 };
+
+///----- horse color command -----///
+async function hColor(interaction, client) {
+  const firstChoice = interaction.options.getString("color1");
+  const secondChoice = interaction.options.getString("color2");
+  let result = null;
+
+  // loop to find the 4 results from base breeding
+  for (const combo of baseCombos) {
+    if (
+      (combo.baseColor[0] === firstChoice && combo.baseColor[1] === secondChoice) ||
+      (combo.baseColor[1] === firstChoice && combo.baseColor[0] === secondChoice)
+    ) {
+      let sames = [];
+      result = [];
+      for (const color of combo.baseResult) {
+        if (sames.includes(color)) continue;
+        let count = combo.baseResult.filter((c) => c === color).length;
+        result.push(`${count * 25}% ${color}`);
+        sames.push(color);
+      }
+      result = result.join(", ");
+      break;
+    }
+  }
+  if (!result) return await interaction.editReply("How the fuck did you get this? Probs tag @ dev");
+
+  let newMessage = `Bases: ${firstChoice} + ${secondChoice}\nResults: ${result}`;
+  // output embed
+  const embed = client.makeEmbed("Base color combo result.", newMessage);
+  return await interaction.editReply({ embeds: [embed] });
+}
+
+///----- horse breed command -----///
+async function hBreed(interaction, client) {
+  const firstBreed = interaction.options.getString("breed1");
+  const secondBreed = interaction.options.getString("breed2");
+  let result = null;
+
+  var filtered1 = horseInfo.filter((horse) => horse.breed === firstBreed);
+  if (filtered1.length === 0)
+    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${firstBreed}__`);
+  var filtered2 = horseInfo.filter((horse) => horse.breed === secondBreed);
+  if (filtered2.length === 0)
+    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${secondBreed}__`);
+
+  // loop to find the 4 results from base breeding
+  for (const combo of horseCross) {
+    if (
+      (combo.parents[0] === firstBreed && combo.parents[1] === secondBreed) ||
+      (combo.parents[1] === firstBreed && combo.parents[0] === secondBreed)
+    ) {
+      result = combo.foal.join(", ");
+      break;
+    }
+  }
+  if (!result) {
+    if (
+      (filtered1[0].type === "Draft" && filtered2[0].type === "Pony") ||
+      (filtered1[0].type === "Pony" && filtered2[0].type === "Draft")
+    )
+      result = `**Crossing draft horses with ponies is not permitted.**`;
+    else result = `25% ${firstBreed}, 25% ${secondBreed}, 50% grade`;
+  }
+
+  let newMessage = `Parents: ${firstBreed} + ${secondBreed}\nFoal: ${result}`;
+  // output embed
+  const embed = client.makeEmbed("Cross breed result.", newMessage);
+  return await interaction.editReply({ embeds: [embed] });
+}
+
+///----- horse info command -----///
+async function hInfo(interaction, client) {
+  const breed = interaction.options.getString("breed");
+  let result = null;
+
+  // only lets through the chosen info (breed)
+  var filtered = horseInfo.filter((horse) => horse.breed === breed);
+
+  if (filtered.length === 0)
+    return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: __${breed}__`);
+  result = filtered[0];
+  let newMessage = [
+    `**${result.breed}**`,
+    `Type: *${result.type}*`,
+    `Height: *${result.low.toFixed(1)} - ${result.top.toFixed(1)}*`,
+    `Terrain Found: *${result.terrain}*`,
+    `Arena Bonus: *${result.arena_bonus}*`,
+  ].join("\n");
+
+  // output embed
+  const embed = client.makeEmbed("Horse info.", newMessage);
+  return await interaction.editReply({ embeds: [embed] });
+}

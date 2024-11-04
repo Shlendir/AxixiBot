@@ -212,6 +212,7 @@ async function breedAdd(interaction, client, hiuserObject) {
     color: color,
     markings: markings,
     notes: notes,
+    dateEdited: new Date(),
   });
 
   // embed reply
@@ -246,7 +247,7 @@ async function breedEdit(interaction, client, hiuserObject) {
   // updating database after user edit
   await Breedlist.updateOne(
     { _id: breedlistObject.id },
-    { wilds: wilds, statsPersona: stats, color: color, markings: markings, notes: notes }
+    { wilds: wilds, statsPersona: stats, color: color, markings: markings, notes: notes, dateEdited: new Date() }
   );
 
   // embed reply

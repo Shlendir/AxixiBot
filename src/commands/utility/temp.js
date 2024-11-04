@@ -1,11 +1,11 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("temp")
     .setDescription("Convert temperatures.")
-    .addStringOption(
-      (option) =>
+    // unit
+    .addStringOption((option) =>
         option
           .setName("unit")
           .setDescription("What unit do you have?")
@@ -13,7 +13,9 @@ module.exports = {
           .addChoices({ name: "Celsius", value: "C" }, { name: "Fahrenheit", value: "F" }, { name: "Kelvin", value: "K" })
       //old values for fun: logical_temp, freedom_temp and chaos_temp lol
     )
+    // temp
     .addNumberOption((option) => option.setName("temp").setDescription("What is your temperature?").setRequired(true))
+    // to
     .addStringOption((option) =>
       option
         .setName("to")
@@ -32,10 +34,8 @@ module.exports = {
 
     // if ppl chose the same damn units
     if (unit1 === unit2)
-      embed = new EmbedBuilder()
-        .setTitle("Temperature conversion")
-        .setDescription(`${first_temp}°${unit1}`)
-        .setColor(0xa1c1d9);
+      // output embed if same temp
+      embed = client.makeEmbed("Temperature conversion.", `${first_temp}°${unit1}`, 0xa1c1d9);
     else {
       if (unit1 === "C") {
         if (unit2 === "F") last_temp = first_temp * (9 / 5) + 32; // c to f
@@ -50,22 +50,20 @@ module.exports = {
 
       const rounded = last_temp.toFixed(2); //rounds it
 
-      embed = new EmbedBuilder()
-        .setTitle("Temperature conversion")
-        .setColor(0xa1c1d9)
-        .addFields([
-          {
-            name: unit1 === "C" ? "Celsius" : unit1 === "F" ? "Fahrenheit" : "Kelvin",
-            value: `${first_temp}°${unit1}`,
-            inline: true,
-          },
-          {
-            name: unit2 === "C" ? "Celsius" : unit2 === "F" ? "Fahrenheit" : "Kelvin",
-            value: `${rounded}°${unit2}`,
-            inline: true,
-          },
-        ]);
-      //result message ^^
+      const emFields = [
+        {
+          name: unit1 === "C" ? "Celsius" : unit1 === "F" ? "Fahrenheit" : "Kelvin",
+          value: `${first_temp}°${unit1}`,
+          inline: true,
+        },
+        {
+          name: unit2 === "C" ? "Celsius" : unit2 === "F" ? "Fahrenheit" : "Kelvin",
+          value: `${rounded}°${unit2}`,
+          inline: true,
+        },
+      ]
+      // output embed
+      embed = client.makeEmbed("Temperature conversion.", null, 0xa1c1d9, emFields);
     }
     await interaction.editReply({ embeds: [embed] });
   },

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -22,12 +22,10 @@ module.exports = {
 
     context += `Options: *${choices.join(", ")}*`;
 
-    const embed = new EmbedBuilder()
-      .setTitle("Choice.")
-      .setDescription(context)
-      .setColor(0xa1c1d9)
-      .addFields([{ name: "Chosen option:", value: `> *${choices[randomIndex]}*` }]);
-
+    // output embed
+    const embed = client.makeEmbed("Choice.", context, 0xa1c1d9, [
+      { name: "Chosen option:", value: `> *${choices[randomIndex]}*` },
+    ]);
     await interaction.editReply({ embeds: [embed] });
   },
 };
