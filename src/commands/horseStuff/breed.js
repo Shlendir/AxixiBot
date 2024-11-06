@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 const breeds = require("../../functions/datafiles/breeds.json");
 const Breedlist = require("../../schemas/breedlist"); //needs same const name as in schema
 const mongoose = require("mongoose");
@@ -8,6 +8,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("breed")
     .setDescription("Set up your breeding list.")
+    // Register command
     .addSubcommand((subcommand) =>
       subcommand
         .setName("register")
@@ -83,6 +84,29 @@ module.exports = {
             .setRequired(true)
             .setAutocomplete(true)
         )
+    )
+    // List commands (user and breed)
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("list")
+        .setDescription("Search info from breeding lists. Leave options empty to display your list.")
+        .addStringOption((option) =>
+          option.setName("hi-user").setDescription("Their in game username. (LC only)").setRequired(false)
+        )
+        .addStringOption((option) =>
+          option
+            .setName("breed")
+            .setDescription("The name of the breed you want to search.")
+            .setRequired(false)
+            .setAutocomplete(true)
+        )
+        .addStringOption((option) =>
+          option.setName("stats").setDescription(`(stat + persona) There is 15 char limit.`).setRequired(false).setMaxLength(15)
+        )
+        .addStringOption((option) => option.setName("color").setDescription("Search any color preferences.").setRequired(false))
+        .addStringOption((option) =>
+          option.setName("markings").setDescription("Search any markings preferences.").setRequired(false)
+        )
     ),
 
   async autocomplete(interaction, client) {
@@ -100,6 +124,11 @@ module.exports = {
     const command = interaction.options.getSubcommand(false);
 
     try {
+      if (command === "list")
+        //search by user or breed
+        return await breedSearch(interaction, client);
+
+      //need to be registered
       let hiuserObject = await Hiuser.findOne({ discordId: interaction.user.id });
       if (!hiuserObject && command !== "register") {
         return await interaction.editReply(
@@ -215,8 +244,8 @@ async function breedAdd(interaction, client, hiuserObject) {
     dateEdited: new Date(),
   });
 
-  // embed reply
-  const embed = await formatEmbed(interaction.user.id, breed, `__Added to "${hiuser}"s list.__`, "Breed added.");
+  // embed replyuserId
+  const embed = await formatEmbed(client, interaction.user.id, breed, `__Added to "${hiuser}"s list.__`, "Breed added.");
   await interaction.editReply({ embeds: [embed] });
 }
 
@@ -251,10 +280,10 @@ async function breedEdit(interaction, client, hiuserObject) {
   );
 
   // embed reply
-  const embed = await formatEmbed(interaction.user.id, breed, `__Edited "${hiuser}"s breed list.__`, "Breed edited.");
+  const embed = await formatEmbed(client, interaction.user.id, breed, `__Edited "${hiuser}"s breed list.__`, "Breed edited.");
   await interaction.editReply({ embeds: [embed] });
 }
-
+///----- breed remove command -----///
 async function breedRemove(interaction, client, hiuserObject) {
   const hiuser = hiuserObject.hiUsername;
   const breed = interaction.options.getString("breed");
@@ -267,16 +296,57 @@ async function breedRemove(interaction, client, hiuserObject) {
 
   await breedlistObject.deleteOne().catch(console.error);
 
-  const embed = new EmbedBuilder()
-    .setTitle("Breed removed.")
-    .setDescription(`__"${breed}" has been removed from "${hiuser}"s list.__`)
-    .setColor(0x9acd32);
+  // output embed
+  const embed = client.makeEmbed("Breed removed.", `__"${breed}" has been removed from "${hiuser}"s list.__`, 0x9acd32);
+  return await interaction.editReply({ embeds: [embed] });
+}
 
-  await interaction.editReply({ embeds: [embed] });
+///----- breed list command -----///
+async function breedSearch(interaction, client) {
+  const hiuser = interaction.options.getString("hi-user");
+  const breed = interaction.options.getString("breed");
+
+  // user didn't add user or breed
+  if (!hiuser && !breed) return await interaction.editReply("Please input either hi-user or breed (or both).");
+  // breed added but invalid
+  if (breed) {
+    var filtered = breeds.filter((horse) => horse.name === breed);
+    if (filtered.length === 0)
+      return await interaction.editReply(`This breed doesn't exist or is missing. You wrote: "${breed}"`);
+  }
+  // user added but not registered
+  let discordId = null;
+  if (hiuser) {
+    let hiuserObject = await Hiuser.findOne({ hiUsername: hiuser });
+    if (!hiuserObject) return await interaction.editReply(`"${hiuser}" hasn't been registered.`);
+    discordId = hiuserObject.discordId;
+  }
+
+  const stats = interaction.options.getString("stats") || null;
+  const color = interaction.options.getString("color") || null;
+  const markings = interaction.options.getString("markings") || null;
+
+  // user exists
+  let breedlistObjects = [];
+  if(hiuser && breed){
+    breedlistObjects = await Breedlist.find({ discordId: discordId, breed: breed});
+  } else if (hiuser){
+    breedlistObjects = await Breedlist.find({ discordId: discordId});
+  } else if (breed){
+    breedlistObjects = await Breedlist.find({ breed: breed});
+  }
+
+  if (breedlistObjects.length === 0) {
+    // if no breeds output this message
+    const embed = client.makeEmbed("Breed list", `Couldn't find any breeds based on these keywords:`, 0x9acd32);
+    return await interaction.editReply({ embeds: [embed] });
+  }
+
+  // they do have breeds
 }
 
 ///----- formatting output text -----///
-async function formatEmbed(userId, breed, msgHeadline, theTitle) {
+async function formatEmbed(client, userId, breed, msgHeadline, theTitle) {
   let breedlistObject = await Breedlist.findOne({ discordId: userId, breed: breed });
   // err
   if (!breedlistObject) return await interaction.editReply(`Dev: "This object got lost somewhere idk, I'll try to find it."`);
@@ -288,7 +358,8 @@ async function formatEmbed(userId, breed, msgHeadline, theTitle) {
   if (breedlistObject.markings) message.push(`**Markings info:** ${breedlistObject.markings}`);
   if (breedlistObject.notes) message.push(`**Extra notes:**\n${breedlistObject.notes}`);
 
-  const embed = new EmbedBuilder().setTitle(theTitle).setDescription(message.join("\n")).setColor(0x9acd32);
+  // output embed
+  const embed = client.makeEmbed(theTitle, message.join("\n"), 0x9acd32);
 
   return embed;
 }
