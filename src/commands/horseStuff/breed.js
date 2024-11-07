@@ -89,7 +89,7 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("list")
-        .setDescription("Search info from breeding lists. Leave options empty to display your list.")
+        .setDescription("Search info from breeding lists. HI user and/or breed field(s) required.")
         .addStringOption((option) =>
           option.setName("hi-user").setDescription("Their in game username. (LC only)").setRequired(false)
         )
@@ -326,23 +326,76 @@ async function breedSearch(interaction, client) {
   const color = interaction.options.getString("color") || null;
   const markings = interaction.options.getString("markings") || null;
 
+  // format keywords
+  let keywords = [];
+  if (hiuser) keywords.push(`**HI user:** ${hiuser}`);
+  if (breed) keywords.push(`**Breed:** ${breed}`);
+  if (stats) keywords.push(`**Stats:** ${stats}`);
+  if (color) keywords.push(`**Color:** ${color}`);
+  if (markings) keywords.push(`**Markings:** ${markings}`);
+
   // user exists
   let breedlistObjects = [];
-  if(hiuser && breed){
-    breedlistObjects = await Breedlist.find({ discordId: discordId, breed: breed});
-  } else if (hiuser){
-    breedlistObjects = await Breedlist.find({ discordId: discordId});
-  } else if (breed){
-    breedlistObjects = await Breedlist.find({ breed: breed});
+  if (hiuser && breed) breedlistObjects = await Breedlist.find({ discordId: discordId, breed: breed });
+  else if (hiuser) breedlistObjects = await Breedlist.find({ discordId: discordId });
+  else if (breed) breedlistObjects = await Breedlist.find({ breed: breed });
+
+  // check if not have keyword
+  let filteredObjects = [];
+  for (const breedlistObject of breedlistObjects) {
+    if (stats && !breedlistObject.statsPersona.includes(stats)) continue;
+    if (color && !breedlistObject.color.includes(color)) continue;
+    if (markings && !breedlistObject.markings.includes(markings)) continue;
+
+    // keywords found
+    filteredObjects.push(breedlistObject);
   }
 
-  if (breedlistObjects.length === 0) {
-    // if no breeds output this message
-    const embed = client.makeEmbed("Breed list", `Couldn't find any breeds based on these keywords:`, 0x9acd32);
+  // formatting embeds
+  let embed = null;
+  if (filteredObjects.length === 0) {
+    // if no breeds, output this message
+    embed = client.makeEmbed(
+      "Breed list",
+      `__Couldn't find any breeds based on these keywords.__\n\n${keywords.join(`\n`)}`,
+      0x9acd32
+    );
     return await interaction.editReply({ embeds: [embed] });
   }
 
+  const keyEmbed = client.makeEmbed("Breed list", `__Searched keywords__\n\n${keywords.join(`\n`)}`, 0x9acd32);
+
   // they do have breeds
+  if (hiuser && breed) {
+    let breedlistObject = filteredObjects[0];
+    let message = [`- **Breed:** ${breedlistObject.breed}`, `**Wilds:** ${breedlistObject.wilds ? "yes" : "no"}`];
+    if (breedlistObject.statsPersona) message.push(`**Stats:** ${breedlistObject.statsPersona}`);
+    if (breedlistObject.color) message.push(`**Color info:** ${breedlistObject.color}`);
+    if (breedlistObject.markings) message.push(`**Markings info:** ${breedlistObject.markings}`);
+    if (breedlistObject.notes) message.push(`**Extra notes:**\n  - ${breedlistObject.notes}`);
+
+    embed = client.makeEmbed(`__${hiuser}'s list__`, message.join("\n- "), 0x9acd32);
+  }
+  // only user search
+  else if (hiuser) {
+    let message = filteredObjects.map((filteredObject) => `- ${filteredObject.breed}${filteredObject.wilds ? " (+ wilds)" : ""}`);
+    embed = client.makeEmbed(`__${hiuser}'s list__`, message.join("\n"), 0x9acd32);
+  }
+  // only breed search
+  else if (breed) {
+    let hiuserObjects = await Hiuser.find({});
+    let message = [];
+    for (const filteredObject of filteredObjects) {
+      let hiuser = hiuserObjects.find((user) => user.discordId === filteredObject.discordId);
+      if (hiuser) message.push(`- ${hiuser.hiUsername}${filteredObject.wilds ? " (+ wilds)" : ""}`);
+      else {
+        // log this
+      }
+    }
+    embed = client.makeEmbed(`__${breed}__`, message.join("\n"), 0x9acd32);
+  }
+
+  return await interaction.editReply({ embeds: [keyEmbed, embed] });
 }
 
 ///----- formatting output text -----///
@@ -352,14 +405,14 @@ async function formatEmbed(client, userId, breed, msgHeadline, theTitle) {
   if (!breedlistObject) return await interaction.editReply(`Dev: "This object got lost somewhere idk, I'll try to find it."`);
 
   // embed for breed commands
-  let message = [msgHeadline, ``, `**Breed:** ${breedlistObject.breed}`, `**Wilds:** ${breedlistObject.wilds ? "yes" : "no"}`];
-  if (breedlistObject.stats) message.push(`**Stats:** ${breedlistObject.stats}`);
+  let message = [`- **Breed:** ${breedlistObject.breed}`, `**Wilds:** ${breedlistObject.wilds ? "yes" : "no"}`];
+  if (breedlistObject.statsPersona) message.push(`**Stats:** ${breedlistObject.statsPersona}`);
   if (breedlistObject.color) message.push(`**Color info:** ${breedlistObject.color}`);
   if (breedlistObject.markings) message.push(`**Markings info:** ${breedlistObject.markings}`);
-  if (breedlistObject.notes) message.push(`**Extra notes:**\n${breedlistObject.notes}`);
+  if (breedlistObject.notes) message.push(`**Extra notes:**\n  - ${breedlistObject.notes}`);
 
   // output embed
-  const embed = client.makeEmbed(theTitle, message.join("\n"), 0x9acd32);
+  const embed = client.makeEmbed(theTitle, msgHeadline + `\n\n` + message.join("\n- "), 0x9acd32);
 
   return embed;
 }
